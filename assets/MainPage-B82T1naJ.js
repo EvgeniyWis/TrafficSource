@@ -1,0 +1,1 @@
+import{r as s,j as o}from"./index-rA1Rbrmx.js";const n="_MainBlock_1iq0c_1",a={MainBlock:n},c=s.memo(()=>o.jsx("div",{className:a.MainBlock})),i=s.memo(()=>o.jsx("main",{children:o.jsx(c,{})}));export{i as MainPage};
