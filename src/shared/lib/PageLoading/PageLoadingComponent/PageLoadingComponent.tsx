@@ -400,7 +400,7 @@ const HalfCircle: React.FC<PageLoadingComponentProps> = styled.div`
 
 export const PageLoadingComponent: React.FC<PageLoadingComponentProps> = ({
   style,
-  color = "var(--main-color)",
+  color = "#fe4f74",
   speed,
   size = "default",
 }) => {

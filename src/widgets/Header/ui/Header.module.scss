@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   width: calc(100% - (var(--padding-x) * 2));
-  height: 80px;
+  height: var(--header-height);
   border-radius: 30px;
   backdrop-filter: blur(50px);
   background: rgba(17 17 17 / 40%);
