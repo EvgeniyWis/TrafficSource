@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PageLoading } from "./PageLoading";
+import { PageOpenAnimation } from "./PageOpenAnimation";
 
 const meta = {
-  title: "Shared/PageLoading",
-  component: PageLoading,
+  title: "UIKit/PageOpenAnimation",
+  component: PageOpenAnimation,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof PageLoading>;
+} satisfies Meta<typeof PageOpenAnimation>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

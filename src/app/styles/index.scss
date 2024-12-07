@@ -14,6 +14,7 @@
   --z-index-hidden: -1;
   --z-index-zero: 0;
   --z-index-one: 1;
+  --z-index-page-animation: 2;
 
   // Fonts
   --font-family: "Montserrat", sans-serif;
@@ -21,7 +22,7 @@
   --font-family-semibold: "Montserrat-semiBold", sans-serif;
 
   // Transition
-  --transition-duration-default: 0.4s;
+  --transition-duration-default: 0.3s;
   --transition-duration-medium: 0.8s;
   --transition-duration-long: 2.5s;
 

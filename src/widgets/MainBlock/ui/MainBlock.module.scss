@@ -31,7 +31,7 @@
 
     &__category {
       border-radius: 30px;
-      background-color: rgba(17, 17, 17 / 40%);
+      background-color: rgba(17 17 17 / 40%);
       height: 49px;
       width: 144px;
       position: absolute;
@@ -63,13 +63,13 @@
       &__text {
         font-weight: 600;
         font-size: 24px;
-        color: rgba(255, 255, 255 / 10%);
+        color: rgba(255 255 255 / 10%);
         transition: var(--transition-duration-medium) linear;
         transition-property: color, text-shadow;
       }
 
       &__hover {
-        box-shadow: 0 0 20px rgba(17, 17, 17 / 100%);
+        box-shadow: 0 0 20px rgba(17 17 17 / 100%);
 
         .MainBlock__bg__category__text {
           text-shadow: 0 0 4px #ff84f5;
