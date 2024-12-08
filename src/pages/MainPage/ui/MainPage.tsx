@@ -3,6 +3,7 @@ import { memo, useEffect, useState } from "react";
 import { MainPageContext, MainPageScrollPositions } from "../model/context";
 import { WhyWe } from "@/widgets/WhyWe";
 import { IsElementVisible } from "@/shared/utils/IsElementVisible";
+import { Services } from "@/widgets/Services";
 
 export const MainPage: React.FC = memo((): React.JSX.Element => {
   // Отслеживание позиции скролла пользователя
@@ -46,6 +47,7 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
       <main>
         <MainBlock />
         <WhyWe />
+        <Services />
       </main>
     </MainPageContext.Provider>
   );
