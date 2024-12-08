@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "newItems": [],
   "deletedItems": [],
@@ -30,3 +31,6 @@
   "expectedDir": "reference",
   "diffDir": "difference"
 }
+=======
+{"newItems":[],"deletedItems":[],"passedItems":[],"failedItems":["chrome_iphone7_Shared_Lib_Flex_Row.png","chrome_iphone7_Shared_UIKit_Button_Primary.png","chrome_laptop_Shared_Lib_Flex_Row_5.png","chrome_laptop_Shared_UIKit_Button_Primary.png"],"expectedItems":["chrome_iphone7_Shared_Lib_Flex_Row.png","chrome_iphone7_Shared_UIKit_Button_Primary.png","chrome_laptop_Shared_Lib_Flex_Row_5.png","chrome_laptop_Shared_UIKit_Button_Primary.png"],"actualItems":["chrome_iphone7_Shared_Lib_Flex_Row.png","chrome_iphone7_Shared_UIKit_Button_Primary.png","chrome_laptop_Shared_Lib_Flex_Row_5.png","chrome_laptop_Shared_UIKit_Button_Primary.png"],"diffItems":["chrome_iphone7_Shared_Lib_Flex_Row.png","chrome_iphone7_Shared_UIKit_Button_Primary.png","chrome_laptop_Shared_Lib_Flex_Row_5.png","chrome_laptop_Shared_UIKit_Button_Primary.png"],"actualDir":"current","expectedDir":"reference","diffDir":"difference"}
+>>>>>>> fdc0204 (Finish WhyWe block.)
