@@ -34,7 +34,7 @@
     $border: 5px;
     $dark: #333;
     $neon: #fe4f74;
-    $transition-duration: var(--transition-duration-medium);
+    $transition-duration: 0.6s;
 
     background: #2d2d2d;
     transition: $transition-duration ease;
