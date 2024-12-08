@@ -1,0 +1,24 @@
+@import "@/app/styles/ScssVars";
+
+.Services {
+  background-image: url("@/shared/assets/images/Services/ServicesBG.webp");
+  width: 100%;
+  padding: var(--padding-y) var(--padding-x);
+
+  @media (max-width: $tablet-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-tablet-x);
+  }
+
+  @media (max-width: $mobile-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-mobile-x);
+  }
+
+  &__caption {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+  }
+}
