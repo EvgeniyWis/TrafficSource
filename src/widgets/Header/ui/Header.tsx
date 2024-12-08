@@ -3,7 +3,7 @@ import { memo } from "react";
 import { Flex } from "@/shared/lib/Stack";
 import LogoSVG from "@/shared/assets/icons/global/LogoSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
-import TelegramSVG from "@/shared/assets/icons/global/TelegramSVG.svg?react";
+import TelegramCircleSVG from "@/shared/assets/icons/global/TelegramCircleSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
 
 export const Header: React.FC = memo((): React.JSX.Element => {
@@ -43,7 +43,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
           target="_blank"
           href="https://t.me/Agent_Traffic23"
         >
-          <TelegramSVG />
+          <TelegramCircleSVG />
         </a>
 
         <Button>

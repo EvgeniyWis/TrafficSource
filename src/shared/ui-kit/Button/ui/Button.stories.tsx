@@ -17,10 +17,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: (
-      <a target="_blank" href="https://t.me/Agent_Traffic23">
-        Бесплатная консультация
-      </a>
-    ),
+    children: <>Button</>,
+  },
+};
+
+export const WithBG: Story = {
+  args: {
+    children: <>Button</>,
+    themes: ["withBG"],
+  },
+};
+
+export const BigXPadding: Story = {
+  args: {
+    children: <>Button</>,
+    themes: ["big-x-padding"],
+  },
+};
+
+export const WithMoreDarkBG: Story = {
+  args: {
+    children: <>Button</>,
+    themes: ["withMoreDarkBG"],
   },
 };

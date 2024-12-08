@@ -6,7 +6,7 @@ $main-block-height: 900px;
   height: $main-block-height;
   width: 100%;
   position: relative;
-  background-image: url("@/shared/assets/images/MainBlockBG.webp");
+  background-image: url("@/shared/assets/images/MainBlock/MainBlockBG.webp");
   padding: var(--padding-y) var(--padding-x);
   z-index: var(--z-index-bg-effect);
 
@@ -107,20 +107,20 @@ $main-block-height: 900px;
     &__caption {
       font-weight: 600;
       font-size: 24px;
-      color: #fff;
+      color: var(--color-white);
     }
 
     &__desc {
       font-weight: 500;
       font-size: 14px;
-      color: #fff;
+      color: var(--color-white);
       opacity: 0.4;
     }
 
     &__step {
       font-weight: 600;
       font-size: 24px;
-      color: #fff;
+      color: var(--color-white);
       opacity: 0.4;
 
       &::after {

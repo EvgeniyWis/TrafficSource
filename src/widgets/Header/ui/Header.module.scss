@@ -27,7 +27,7 @@
   &__caption {
     font-weight: 700;
     font-size: 14px;
-    color: #fff;
+    color: var(--color-white);
     opacity: 1;
   }
 
@@ -83,7 +83,7 @@
     &__item {
       font-weight: 500;
       font-size: 14px;
-      color: #fff;
+      color: var(--color-white);
       cursor: pointer;
       transition: opacity linear var(--transition-duration-default);
       opacity: 0.4;

@@ -112,7 +112,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
       <Flex
         className={styles.MainBlock__footer}
         align="end"
-        max
+        maxWidth
         justify="between"
       >
         <Flex

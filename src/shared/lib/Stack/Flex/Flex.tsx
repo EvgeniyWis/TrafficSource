@@ -14,11 +14,15 @@ export type FlexGap = "0" | "3" | "5" | "10" | "15" | "20" | "30" | "40" | "50";
 export type FlexWitdth =
   | "10"
   | "20"
+  | "25"
   | "30"
+  | "35"
   | "40"
   | "50"
   | "60"
+  | "65"
   | "70"
+  | "75"
   | "80"
   | "90";
 
@@ -58,11 +62,15 @@ const gapClasses: Record<FlexGap, string> = {
 const widthClasses: Record<FlexWitdth, string> = {
   10: styles.width10,
   20: styles.width20,
+  25: styles.width25,
   30: styles.width30,
+  35: styles.width35,
   40: styles.width40,
   50: styles.width50,
   60: styles.width60,
+  65: styles.width65,
   70: styles.width70,
+  75: styles.width75,
   80: styles.width80,
   90: styles.width90,
 };
@@ -80,11 +88,11 @@ export interface FlexProps extends DivProps {
   direction?: FlexDirection;
   wrap?: boolean;
   gap?: FlexGap;
-  max?: boolean;
+  maxWidth?: boolean;
+  maxHeight?: boolean;
   width?: FlexWitdth;
-  isSection?: boolean;
-  "data-testid"?: string;
   innerRef?: React.LegacyRef<HTMLDivElement>;
+  relative?: boolean;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -95,12 +103,12 @@ export const Flex = (props: FlexProps) => {
     align = "center",
     direction = "row",
     gap,
-    max,
+    maxWidth,
+    maxHeight,
     innerRef,
-    isSection,
-    "data-testid": dataTestId,
     wrap,
     width,
+    relative,
     ...otherProps
   } = props;
 
@@ -111,31 +119,17 @@ export const Flex = (props: FlexProps) => {
     directionClasses[direction],
     gap && gapClasses[gap],
     width && widthClasses[width],
+    styles.Flex,
+    maxWidth && styles.maxWidth,
+    maxHeight && styles.maxHeight,
+    relative && styles.relative,
+    wrap && styles.wrap,
   ];
 
   return (
-    <>
-      {isSection ? (
-        <section
-          ref={innerRef}
-          className={`${styles.Flex} ${max ? styles.max : ""} ${wrap ? styles.wrap : ""}
-           ${classes.join(" ")}`}
-          data-testid={dataTestId}
-          {...otherProps}
-        >
-          {children}
-        </section>
-      ) : (
-        <div
-          ref={innerRef}
-          className={`${styles.Flex} ${max ? styles.max : ""} ${wrap ? styles.wrap : ""} ${classes.join(" ")}`}
-          data-testid={dataTestId}
-          {...otherProps}
-        >
-          {children}
-        </div>
-      )}
-    </>
+    <div ref={innerRef} className={classes.join(" ")} {...otherProps}>
+      {children}
+    </div>
   );
 };
 Flex.displayName = "Flex";

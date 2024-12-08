@@ -4,6 +4,9 @@ import { PageOpenAnimation } from "./PageOpenAnimation";
 const meta = {
   title: "Shared/UIKit/PageOpenAnimation",
   component: PageOpenAnimation,
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof PageOpenAnimation>;
 
 export default meta;
