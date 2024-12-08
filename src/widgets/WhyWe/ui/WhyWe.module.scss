@@ -1,14 +1,25 @@
+@import "@/app/styles/ScssVars";
+
 .WhyWe {
-  background-image: url("@/shared/assets/images/WhyWeBG.webp");
+  background-image: url("@/shared/assets/images/WhyWe/WhyWeBG.webp");
   width: 100%;
   height: 900px;
+  padding: var(--padding-y) var(--padding-x);
+
+  @media (max-width: $tablet-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-tablet-x);
+  }
+
+  @media (max-width: $mobile-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-mobile-x);
+  }
 
   &__caption {
     font-weight: 700;
     font-size: 64px;
     line-height: 130%;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     margin-top: 100px;
     position: relative;
     margin-bottom: 30px;
@@ -17,6 +28,174 @@
       position: absolute;
       top: 71px;
       left: -55px;
+    }
+  }
+
+  &__button__disappear {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  &__block {
+    border-radius: 30px;
+    height: 415px;
+    backdrop-filter: blur(50px);
+    background: rgba(27 27 27 / 80%);
+    animation: block-anim var(--transition-duration-medium) linear;
+    opacity: 1;
+    transform: translateY(-10%);
+    padding: 40px 35px;
+
+    @media (max-width: $tablet-mediaquery-width) {
+      padding: 20px;
+    }
+
+    @keyframes block-anim {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(-10%);
+      }
+    }
+
+    &__text {
+      border-bottom: 1px solid;
+      border-image: linear-gradient(to right, #fe4f74 0%, #a972ff 100%) 1;
+      padding-bottom: 54px;
+    }
+
+    @keyframes text-anim {
+      0% {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &__caption {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-white);
+      animation: text-anim calc(var(--transition-duration-medium) + 0.1s) linear;
+    }
+
+    &__desc {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: #aaa;
+      animation: text-anim calc(var(--transition-duration-medium) + 0.3s) linear;
+
+      strong {
+        font-weight: 600;
+        color: #dedede;
+      }
+    }
+
+    &__strategyNumber {
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--color-white);
+      animation: text-anim calc(var(--transition-duration-medium) + 0.5s) linear;
+    }
+
+    &__strategyDesc {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--color-gray);
+      animation: text-anim calc(var(--transition-duration-medium) + 0.7s) linear;
+    }
+
+    &__marketing {
+      border: 1px solid var(--color-white);
+      border-radius: 30px;
+      background: #e5e5e5;
+      padding: 20px 25px;
+      animation: text-anim calc(var(--transition-duration-medium) + 0.3s) linear;
+      height: 100%;
+
+      &__caption {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        background: linear-gradient(90deg, #fe4f74 0%, #a972ff 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &__desc {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: var(--color-dark-gray);
+      }
+
+      &__button {
+        font-weight: 600;
+        font-size: 22px;
+        letter-spacing: -0.02em;
+      }
+
+      &__scan {
+        background-image: url("@/shared/assets/icons/WhyWe/ScanRoundedTextSVG.svg");
+        background-size: cover;
+        padding: 35px;
+        animation: scan-anim 30s linear infinite;
+        position: relative;
+        top: -20px;
+        right: -20px;
+
+        @keyframes scan-anim {
+          0% {
+            rotate: 0deg;
+          }
+
+          100% {
+            rotate: 360deg;
+          }
+        }
+
+        &__arrow {
+          position: relative;
+          left: 20px;
+          bottom: 70px;
+          animation: scan-arrow-anim 2.5s linear infinite;
+
+          @keyframes scan-arrow-anim {
+            0% {
+              transform: translateY(0);
+            }
+
+            50% {
+              transform: translateY(20%);
+            }
+
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
+
+        &__qrs {
+          position: relative;
+          bottom: 30px;
+          align-self: start;
+
+          @media (max-width: $tablet-mediaquery-width) {
+            bottom: 0;
+          }
+        }
+      }
     }
   }
 }

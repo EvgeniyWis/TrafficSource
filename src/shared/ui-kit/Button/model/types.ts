@@ -1,6 +1,12 @@
-export type ButtonThemes = "withBG" | "big-x-padding";
+import { HTMLAttributes } from "react";
 
-export interface ButtonProps {
+export type ButtonThemes =
+  | "withBG"
+  | "big-x-padding"
+  | "withMoreDarkBG"
+  | "maxWidth";
+
+export interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   themes?: ButtonThemes[];
 }
