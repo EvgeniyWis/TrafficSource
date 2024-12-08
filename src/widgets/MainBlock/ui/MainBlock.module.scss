@@ -1,7 +1,22 @@
+@import "@/app/styles/ScssVars";
+
+$main-block-height: 900px;
+
 .MainBlock {
-  height: 900px;
+  height: $main-block-height;
   width: 100%;
   position: relative;
+  background-image: url("@/shared/assets/images/MainBlockBG.jpg");
+  padding: var(--padding-y) var(--padding-x);
+  z-index: var(--z-index-bg-effect);
+
+  @media (max-width: $tablet-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-tablet-x);
+  }
+
+  @media (max-width: $mobile-mediaquery-width) {
+    padding: var(--padding-y) var(--padding-mobile-x);
+  }
 
   &__caption {
     font-weight: 700;
@@ -27,6 +42,12 @@
     &Circles {
       position: relative;
       bottom: 230px;
+      opacity: 0.2;
+      transition: var(--transition-duration-medium) linear opacity;
+
+      &__visible {
+        opacity: 0.7;
+      }
     }
 
     &__category {
@@ -40,24 +61,24 @@
       box-shadow: 0 0 20px transparent;
 
       &:nth-of-type(2) {
-        top: 140px;
-        left: 30%;
+        top: 90px;
+        left: 35%;
       }
 
       &:nth-of-type(3) {
         top: 380px;
-        left: 32%;
+        left: 34%;
         width: 202px;
       }
 
       &:nth-of-type(4) {
-        top: 100px;
-        right: 30%;
+        top: 70px;
+        right: 35%;
       }
 
       &:nth-of-type(5) {
-        top: 390px;
-        right: 31%;
+        top: 400px;
+        right: 34%;
       }
 
       &__text {
@@ -69,12 +90,72 @@
       }
 
       &__hover {
-        box-shadow: 0 0 20px rgba(17 17 17 / 100%);
+        box-shadow: 0 0 20px #ff84f5;
 
         .MainBlock__bg__category__text {
           text-shadow: 0 0 4px #ff84f5;
           color: #ff84f5;
         }
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+    top: calc($main-block-height / 3.5);
+
+    &__caption {
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    &__desc {
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+      opacity: 0.4;
+    }
+
+    &__step {
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+      opacity: 0.4;
+
+      &::after {
+        content: "•";
+        display: block;
+        color: #fc4f76;
+      }
+
+      &:last-of-type {
+        &::after {
+          content: "";
+        }
+      }
+    }
+
+    &__bg {
+      z-index: var(--z-index-bg-effect);
+      position: absolute;
+      opacity: 0.2;
+      transition: var(--transition-duration-medium) linear opacity;
+
+      &__visible {
+        opacity: 1;
+      }
+
+      &:nth-of-type(3) {
+        right: 45%;
+        bottom: -90%;
+        rotate: 60deg;
+      }
+
+      &:nth-of-type(4) {
+        left: 70%;
+        bottom: -35%;
+        rotate: 340deg;
       }
     }
   }

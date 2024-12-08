@@ -30,7 +30,9 @@
   --header-height: 80px;
 }
 
-html {
+html,
+body {
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -39,16 +41,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url("@/shared/assets/images/BackgroundImage.jpg");
-  padding: var(--padding-y) var(--padding-x);
   font-family: var(--font-family);
   scroll-behavior: smooth;
 
-  @media (max-width: $tablet-mediaquery-width) {
-    padding: var(--padding-y) var(--padding-tablet-x);
-  }
-
-  @media (max-width: $mobile-mediaquery-width) {
-    padding: var(--padding-y) var(--padding-mobile-x);
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

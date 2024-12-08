@@ -1,14 +1,15 @@
 import { Flex } from "@/shared/lib/Stack";
 import styles from "./MainBlock.module.scss";
-import { memo, useEffect } from "react";
+import { memo, Suspense, useContext, useEffect } from "react";
 import Spline from "@splinetool/react-spline";
+import { MainPageContext } from "@/pages/MainPage";
 
 export const MainBlock: React.FC = memo((): React.JSX.Element => {
   // Реализация эффекта при наведении на категории
   const categoryHover = (event: MouseEvent, category: Element) => {
     const rect = category.getBoundingClientRect();
 
-    const elementRadius = 80;
+    const elementRadius = 70;
 
     const isNear =
       event.clientX >= rect.left - elementRadius &&
@@ -41,14 +42,25 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
     };
   }, []);
 
+  // Сфера нормальной прозрачности только, если юзер находится в главном блоке
+  const { scrollPosition } = useContext(MainPageContext);
+
   return (
-    <Flex justify="center" direction="column" className={styles.MainBlock}>
+    <Flex
+      id="MainBlock"
+      justify="center"
+      direction="column"
+      className={styles.MainBlock}
+    >
       <Flex direction="column">
         <div className={styles.MainBlock__bg}>
-          <Spline
-            className={styles.MainBlock__bgCircles}
-            scene="https://prod.spline.design/UpP8pxQCMjK5J5QT/scene.splinecode"
-          />
+          <Suspense>
+            <Spline
+              className={`${styles.MainBlock__bgCircles} 
+            ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
+              scene="https://prod.spline.design/UpP8pxQCMjK5J5QT/scene.splinecode"
+            />
+          </Suspense>
 
           <Flex
             justify="center"
@@ -86,6 +98,62 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           Мы - ваш инструмент в развитии бизнеса
         </h2>
       </Flex>
+
+      <Flex
+        className={styles.MainBlock__footer}
+        align="end"
+        max
+        justify="between"
+      >
+        <Flex
+          align="start"
+          gap="10"
+          width="30"
+          className={styles.MainBlock__footer__caption}
+          direction="column"
+        >
+          <h3 className={styles.MainBlock__footer__caption}>
+            Ваш Успех — Наша Цель
+          </h3>
+
+          <p className={styles.MainBlock__footer__desc}>
+            Эффективные маркетинговые стратегии, которые увеличат вашу
+            клиентскую базу и повысят продажи.
+          </p>
+        </Flex>
+
+        <Flex gap="10">
+          <Flex gap="10" className={styles.MainBlock__footer__step}>
+            Привлечение
+          </Flex>
+
+          <Flex gap="10" className={styles.MainBlock__footer__step}>
+            Вовлечение
+          </Flex>
+
+          <Flex gap="10" className={styles.MainBlock__footer__step}>
+            Закрытие
+          </Flex>
+        </Flex>
+      </Flex>
+
+      <Suspense>
+        <Spline
+          id="MainBlock__footer__bg__first"
+          className={`${styles.MainBlock__footer__bg} 
+        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+          scene="https://prod.spline.design/msDDGYrhdTBi0rD7/scene.splinecode"
+        />
+      </Suspense>
+
+      <Suspense>
+        <Spline
+          id="MainBlock__footer__bg__second"
+          className={`${styles.MainBlock__footer__bg} 
+        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+          scene="https://prod.spline.design/6MIJPixCh-Tjxefp/scene.splinecode"
+        />
+      </Suspense>
     </Flex>
   );
 });

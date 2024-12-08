@@ -11,6 +11,16 @@ export type FlexJustify =
 export type FlexAlign = "start" | "center" | "end" | "stretch";
 export type FlexDirection = "row" | "column";
 export type FlexGap = "0" | "3" | "5" | "10" | "15" | "20" | "30" | "40" | "50";
+export type FlexWitdth =
+  | "10"
+  | "20"
+  | "30"
+  | "40"
+  | "50"
+  | "60"
+  | "70"
+  | "80"
+  | "90";
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: styles.justifyStart,
@@ -45,6 +55,18 @@ const gapClasses: Record<FlexGap, string> = {
   50: styles.gap50,
 };
 
+const widthClasses: Record<FlexWitdth, string> = {
+  10: styles.width10,
+  20: styles.width20,
+  30: styles.width30,
+  40: styles.width40,
+  50: styles.width50,
+  60: styles.width60,
+  70: styles.width70,
+  80: styles.width80,
+  90: styles.width90,
+};
+
 type DivProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
@@ -59,6 +81,7 @@ export interface FlexProps extends DivProps {
   wrap?: boolean;
   gap?: FlexGap;
   max?: boolean;
+  width?: FlexWitdth;
   isSection?: boolean;
   "data-testid"?: string;
   innerRef?: React.LegacyRef<HTMLDivElement>;
@@ -77,6 +100,7 @@ export const Flex = (props: FlexProps) => {
     isSection,
     "data-testid": dataTestId,
     wrap,
+    width,
     ...otherProps
   } = props;
 
@@ -86,6 +110,7 @@ export const Flex = (props: FlexProps) => {
     alignClasses[align],
     directionClasses[direction],
     gap && gapClasses[gap],
+    width && widthClasses[width],
   ];
 
   return (

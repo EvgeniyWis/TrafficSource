@@ -3,7 +3,7 @@
 $bar-color: #2b4250;
 
 .PageOpenAnimation {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: var(--z-index-page-animation);
   pointer-events: none;
