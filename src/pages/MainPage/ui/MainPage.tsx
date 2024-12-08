@@ -10,7 +10,6 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
     useState<MainPageScrollPositions>("MainBlock");
 
   useEffect(() => {
-    const body: HTMLBodyElement = document.querySelector("body")!;
     const MainBlock: HTMLElement = document.getElementById("MainBlock")!;
     const WhyWe: HTMLElement = document.getElementById("WhyWe")!;
 
@@ -29,11 +28,11 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
     };
 
     if (MainBlock && WhyWe) {
-      body.addEventListener("scroll", () => changeScrollPositions());
+      document.addEventListener("scroll", () => changeScrollPositions());
     }
 
     return () => {
-      body.removeEventListener("scroll", () => changeScrollPositions());
+      document.removeEventListener("scroll", () => changeScrollPositions());
     };
   }, []);
 

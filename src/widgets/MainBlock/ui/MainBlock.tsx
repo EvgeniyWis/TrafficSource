@@ -1,8 +1,9 @@
 import { Flex } from "@/shared/lib/Stack";
 import styles from "./MainBlock.module.scss";
-import { memo, Suspense, useContext, useEffect } from "react";
-import Spline from "@splinetool/react-spline";
+import { lazy, memo, Suspense, useContext, useEffect } from "react";
 import { MainPageContext } from "@/pages/MainPage";
+
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 export const MainBlock: React.FC = memo((): React.JSX.Element => {
   // Реализация эффекта при наведении на категории

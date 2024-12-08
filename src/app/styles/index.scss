@@ -30,6 +30,10 @@
   --header-height: 80px;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   width: 100%;
@@ -43,8 +47,5 @@ body {
   width: 100%;
   font-family: var(--font-family);
   scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow-y: hidden;
 }
