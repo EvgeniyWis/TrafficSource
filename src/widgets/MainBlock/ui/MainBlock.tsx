@@ -55,7 +55,16 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
     >
       <Flex direction="column">
         <div className={styles.MainBlock__bg}>
-          <Suspense>
+          <Suspense
+            fallback={
+              <div
+                className={styles.MainBlock__bgCircles}
+                style={{ width: "100%", height: "100%", overflow: "hidden" }}
+              >
+                <canvas width="2000" height="1620"></canvas>
+              </div>
+            }
+          >
             <Spline
               className={`${styles.MainBlock__bgCircles} 
             ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
