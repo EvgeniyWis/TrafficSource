@@ -1,0 +1,46 @@
+@use "sass:color";
+
+$bar-color: #2b4250;
+
+.PageOpenAnimation {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-page-animation);
+  pointer-events: none;
+
+  &__bar {
+    position: absolute;
+    width: 10.1vw;
+    background: $bar-color;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 1) translate3d(0, 0, 0);
+    transform-origin: 100% 100%;
+    transition: transform var(--transition-duration-medium) ease-in-out;
+
+    &:first-of-type {
+      border-left: none;
+    }
+
+    $light: $bar-color;
+    $dark: color.mix(black, $bar-color, 5%);
+
+    @for $x from 1 through 10 {
+      &:nth-of-type(#{$x}) {
+        left: ($x - 1) * 10vw;
+        background: linear-gradient(to right, $light 0%, $dark 100%);
+        transition-delay: 0.05s * $x;
+      }
+
+      $light: $dark;
+      $dark: color.mix(black, $bar-color, ($x * 5%));
+    }
+  }
+
+  &__show {
+    .PageOpenAnimation__bar {
+      transform: scale(1, 1) translate3d(0, 0, 0);
+      transform-origin: 0 0;
+    }
+  }
+}

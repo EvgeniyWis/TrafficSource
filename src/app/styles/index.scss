@@ -10,9 +10,11 @@
   --padding-mobile-x: 10px;
 
   // Z-index
+  --z-index-bg-effect: -2;
   --z-index-hidden: -1;
   --z-index-zero: 0;
   --z-index-one: 1;
+  --z-index-page-animation: 2;
 
   // Fonts
   --font-family: "Montserrat", sans-serif;
@@ -20,9 +22,18 @@
   --font-family-semibold: "Montserrat-semiBold", sans-serif;
 
   // Transition
-  --transition-duration-default: 0.4s;
-  --transition-duration-medium: 1s;
+  --transition-duration-default: 0.3s;
+  --transition-duration-medium: 0.8s;
   --transition-duration-long: 2.5s;
+
+  // Heights
+  --header-height: 80px;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,16 +41,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url("@/shared/assets/images/BackgroundImage.jpg");
-  padding: var(--padding-y) var(--padding-x);
   font-family: var(--font-family);
   scroll-behavior: smooth;
 
-  @media (max-width: $tablet-mediaquery-width) {
-    padding: var(--padding-y) var(--padding-tablet-x);
-  }
-
-  @media (max-width: $mobile-mediaquery-width) {
-    padding: var(--padding-y) var(--padding-mobile-x);
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -12,11 +12,11 @@ export const Header: React.FC = memo((): React.JSX.Element => {
       <Flex gap="15">
         <LogoSVG className={styles.Header__logo} />
 
-        <h1 className={styles.Header__caption}>
+        <h2 className={styles.Header__caption}>
           ИСТОЧНИК
           <br />
           ТРАФФИКА
-        </h1>
+        </h2>
       </Flex>
 
       <nav>

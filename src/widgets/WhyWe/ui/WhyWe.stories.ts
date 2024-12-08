@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PageLoading } from "./PageLoading";
+import { WhyWe } from "./WhyWe";
 
 const meta = {
-  title: "Shared/PageLoading",
-  component: PageLoading,
+  title: "Widgets/WhyWe",
+  component: WhyWe,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof PageLoading>;
+} satisfies Meta<typeof WhyWe>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

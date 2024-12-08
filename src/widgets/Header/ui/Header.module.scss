@@ -5,20 +5,23 @@
   align-items: center;
   justify-content: space-between;
   width: calc(100% - (var(--padding-x) * 2));
-  height: 80px;
+  height: var(--header-height);
   border-radius: 30px;
   backdrop-filter: blur(50px);
   background: rgba(17 17 17 / 40%);
   position: fixed;
   z-index: var(--z-index-one);
   padding: 15px 27px;
+  margin: var(--padding-y) var(--padding-x);
 
   @media (max-width: $tablet-mediaquery-width) {
     width: calc(100% - (var(--padding-tablet-x) * 2));
+    margin: var(--padding-y) var(--padding-tablet-x);
   }
 
   @media (max-width: $mobile-mediaquery-width) {
     width: calc(100% - (var(--padding-mobile-x) * 2));
+    margin: var(--padding-y) var(--padding-mobile-x);
   }
 
   &__caption {
