@@ -2,11 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PageOpenAnimation } from "./PageOpenAnimation";
 
 const meta = {
-  title: "UIKit/PageOpenAnimation",
+  title: "Shared/UIKit/PageOpenAnimation",
   component: PageOpenAnimation,
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof PageOpenAnimation>;
 
 export default meta;

@@ -5,7 +5,9 @@ const meta = {
   title: "Widgets/Header",
   component: Header,
   parameters: {
-    layout: "centered",
+    backgrounds: {
+      default: "dark",
+    },
   },
 } satisfies Meta<typeof Header>;
 

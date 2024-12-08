@@ -6,6 +6,9 @@ const meta = {
   component: MainBlock,
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "dark",
+    },
   },
 } satisfies Meta<typeof MainBlock>;
 
