@@ -7,14 +7,15 @@ const container = document.getElementById("root");
 
 if (!container) {
   throw new Error(
-    "Контейнер root не найден. НЕ удалось вмонтировать реакт приложение"
+    "Контейнер root не найден. НЕ удалось вмонтировать реакт приложение",
   );
 }
 
 const root = createRoot(container);
 
 root.render(
+  // TODO: сделать как с разрешением
   <ErrorBoundary fallback={<>Что-то пошло не так.</>}>
     <App />
-  </ErrorBoundary>
+  </ErrorBoundary>,
 );

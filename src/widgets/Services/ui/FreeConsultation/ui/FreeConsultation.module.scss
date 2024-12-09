@@ -1,0 +1,30 @@
+.FreeConsultation {
+  grid-column: 2/4;
+  padding: 27px 28px;
+  background: #dfcce2;
+  border-radius: 30px;
+  height: 314px;
+
+  &__caption {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    background: linear-gradient(65deg, #fe4f74 0%, #a972ff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #000;
+  }
+
+  &__button {
+    height: 75px;
+    font-size: 22px;
+  }
+}

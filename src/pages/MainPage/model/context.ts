@@ -1,6 +1,10 @@
 import { createContext } from "react";
 
-export type MainPageScrollPositions = "MainBlock" | "WhyWe";
+export type MainPageScrollPositions =
+  | "MainBlock"
+  | "WhyWe"
+  | "Services"
+  | "Footer";
 
 export interface MainPageContext {
   scrollPosition: MainPageScrollPositions;

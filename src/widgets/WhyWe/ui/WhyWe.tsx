@@ -115,6 +115,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                   <a
                     className={styles.WhyWe__block__marketing__button}
                     href="https://t.me/Agent_Traffic23"
+                    target="_blank"
                   >
                     <Flex gap="10">
                       <TelegramSVG />
@@ -128,6 +129,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                     <a
                       className={styles.WhyWe__block__marketing__button}
                       href="tel:+79213299965"
+                      target="_blank"
                     >
                       <Flex gap="10">
                         <WhatsAppSVG />
@@ -140,6 +142,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                     <a
                       className={styles.WhyWe__block__marketing__button}
                       href="mailto: traffic_krd23@mail.ru"
+                      target="_blank"
                     >
                       <Flex gap="10">
                         <EmailSVG />
