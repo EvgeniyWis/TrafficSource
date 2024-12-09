@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Service } from "./Service";
-import LogoSVG from "@/shared/assets/icons/global/LogoSVG.svg?react";
+import CreativeSVG from "@/shared/assets/icons/Services/CreativeSVG.svg?react";
+import CreativeActiveSVG from "@/shared/assets/icons/Services/CreativeActiveSVG.svg?react";
 
 const meta = {
   title: "Entities/Service",
   component: Service,
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Service>;
 
 export default meta;
@@ -15,8 +13,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    icon: <LogoSVG />,
-    caption: "Пример заголовка",
-    desc: "Пример описания",
+    icon: <CreativeSVG />,
+    activeIcon: <CreativeActiveSVG />,
+    caption: "Разработка завлекающего креатива",
+    desc: "Ваша идея — наш креатив! Доверьтесь профессионалам, чтобы создать завлекающий контент, который будет продавать.",
   },
 };
