@@ -54,6 +54,7 @@ body {
   flex-direction: column;
   width: 100%;
   font-family: var(--font-family);
+  overflow-y: hidden;
 }
 
 // TODO: убрать заглушку для мобилок

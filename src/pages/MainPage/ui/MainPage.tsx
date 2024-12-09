@@ -15,7 +15,11 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
     const WhyWe: HTMLElement = document.getElementById("WhyWe")!;
     const Services: HTMLElement = document.getElementById("Services")!;
     // TODO: сделать футер
+
+    const Footer: HTMLElement = document.getElementById("Footer")!;
+
     // const Footer: HTMLElement = document.getElementById("Footer")!;
+
 
     const changeScrollPosition = (
       element: HTMLElement,
