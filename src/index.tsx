@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import "./app/styles/index.scss";
 import { App } from "./app/App";
 import { ErrorBoundary } from "react-error-boundary";
+import { Flex } from "./shared/lib/Stack";
 
 const container = document.getElementById("root");
 
@@ -14,8 +15,17 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-  // TODO: сделать как с разрешением
-  <ErrorBoundary fallback={<>Что-то пошло не так.</>}>
+  <ErrorBoundary
+    fallback={
+      <Flex className="zaglushka" maxWidth justify="center">
+        <p>
+          На сайте возникла непредвиденная техническая ошибка.
+          <br />
+          Приносим свои извинения.
+        </p>
+      </Flex>
+    }
+  >
     <App />
   </ErrorBoundary>,
 );

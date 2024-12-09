@@ -6,6 +6,7 @@ import { Header } from "@/widgets/Header";
 import { PageOpenAnimation } from "@/shared/ui-kit/PageOpenAnimation";
 import { tablet_mediaQuery } from "@/shared/const/global";
 import { Flex } from "@/shared/lib/Stack";
+import { Footer } from "@/widgets/Footer";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Suspense>
           <Header />
           <MainPage />
+          <Footer />
 
           <PageOpenAnimation />
         </Suspense>
