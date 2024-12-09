@@ -149,8 +149,12 @@ $main-block-height: 900px;
 
       &:nth-of-type(3) {
         right: 45%;
-        bottom: -90%;
+        bottom: -115%;
         rotate: 60deg;
+
+        @media (max-width: $laptop-mediaquery-width) {
+          bottom: -90%;
+        }
       }
 
       &:nth-of-type(4) {

@@ -69,7 +69,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
               <Spline
                 className={`${styles.MainBlock__bgCircles} 
             ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
-                scene="https://prod.spline.design/UpP8pxQCMjK5J5QT/scene.splinecode"
+                scene="splines/CirclesAnim.splinecode"
               />
             </Suspense>
           )}
@@ -149,27 +149,23 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         </Flex>
       </Flex>
 
-      {["MainBlock", "WhyWe"].includes(scrollPosition) && (
-        <Suspense>
-          <Spline
-            id="MainBlock__footer__bg__first"
-            className={`${styles.MainBlock__footer__bg} 
+      <Suspense>
+        <Spline
+          id="MainBlock__footer__bg__first"
+          className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-            scene="https://prod.spline.design/msDDGYrhdTBi0rD7/scene.splinecode"
-          />
-        </Suspense>
-      )}
+          scene="splines/LeftLineAnim.splinecode"
+        />
+      </Suspense>
 
-      {["MainBlock", "WhyWe"].includes(scrollPosition) && (
-        <Suspense>
-          <Spline
-            id="MainBlock__footer__bg__second"
-            className={`${styles.MainBlock__footer__bg} 
+      <Suspense>
+        <Spline
+          id="MainBlock__footer__bg__second"
+          className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-            scene="https://prod.spline.design/6MIJPixCh-Tjxefp/scene.splinecode"
-          />
-        </Suspense>
-      )}
+          scene="splines/RightLineAnim.splinecode"
+        />
+      </Suspense>
     </Flex>
   );
 });
