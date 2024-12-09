@@ -13,6 +13,9 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
   useEffect(() => {
     const MainBlock: HTMLElement = document.getElementById("MainBlock")!;
     const WhyWe: HTMLElement = document.getElementById("WhyWe")!;
+    const Services: HTMLElement = document.getElementById("Services")!;
+    // TODO: сделать футер
+    const Footer: HTMLElement = document.getElementById("Footer")!;
 
     const changeScrollPosition = (
       element: HTMLElement,
@@ -26,9 +29,11 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
     const changeScrollPositions = () => {
       changeScrollPosition(MainBlock, "MainBlock");
       changeScrollPosition(WhyWe, "WhyWe");
+      changeScrollPosition(Services, "Services");
+      // changeScrollPosition(Footer, "Footer");
     };
 
-    if (MainBlock && WhyWe) {
+    if (MainBlock && WhyWe && Services) {
       document.addEventListener("scroll", () => changeScrollPositions());
     }
 

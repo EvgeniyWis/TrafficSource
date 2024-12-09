@@ -7,6 +7,7 @@ $main-block-height: 900px;
   width: 100%;
   position: relative;
   background-image: url("@/shared/assets/images/MainBlock/MainBlockBG.webp");
+  background-size: cover;
   padding: var(--padding-y) var(--padding-x);
   z-index: var(--z-index-bg-effect);
 

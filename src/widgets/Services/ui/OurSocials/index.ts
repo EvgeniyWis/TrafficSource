@@ -1,0 +1,1 @@
+export {OurSocials} from './ui/OurSocials';

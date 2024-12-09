@@ -2,6 +2,7 @@
 
 .Services {
   background-image: url("@/shared/assets/images/Services/ServicesBG.webp");
+  background-size: cover;
   width: 100%;
   padding: var(--padding-y) var(--padding-x);
 
@@ -19,6 +20,16 @@
     line-height: 130%;
     text-align: center;
     color: #fff;
+    margin-top: 50px;
+  }
+
+  &__items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 50px;
   }
 }

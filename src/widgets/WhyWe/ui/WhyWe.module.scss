@@ -5,6 +5,7 @@
   width: 100%;
   height: 900px;
   padding: var(--padding-y) var(--padding-x);
+  background-size: cover;
 
   @media (max-width: $tablet-mediaquery-width) {
     padding: var(--padding-y) var(--padding-tablet-x);

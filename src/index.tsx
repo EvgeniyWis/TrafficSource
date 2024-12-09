@@ -14,6 +14,7 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
+  // TODO: сделать как с разрешением
   <ErrorBoundary fallback={<>Что-то пошло не так.</>}>
     <App />
   </ErrorBoundary>,
