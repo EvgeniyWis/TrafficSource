@@ -31,50 +31,6 @@
     opacity: 1;
   }
 
-  &__logo {
-    opacity: 0.4;
-    transition: opacity linear var(--transition-duration-long);
-    cursor: pointer;
-    overflow: visible;
-
-    circle {
-      animation: logo-circle-anim var(--transition-duration-long) linear paused
-        infinite;
-      stroke: transparent;
-      transition: stroke linear var(--transition-duration-default);
-
-      @keyframes logo-circle-anim {
-        0% {
-          transform: translateY(20px);
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0.4;
-          transform: translateY(0);
-        }
-
-        70% {
-          opacity: 1;
-        }
-
-        100% {
-          transform: translateY(-10px);
-          opacity: 0;
-        }
-      }
-    }
-
-    &:hover {
-      opacity: 1;
-
-      circle {
-        stroke: white;
-        animation-play-state: running;
-      }
-    }
-  }
-
   &__navList {
     display: flex;
     gap: 50px;

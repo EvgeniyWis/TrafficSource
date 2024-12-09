@@ -5,13 +5,16 @@
   background-size: cover;
   width: 100%;
   padding: var(--padding-y) var(--padding-x);
+  padding-bottom: 100px;
 
   @media (max-width: $tablet-mediaquery-width) {
     padding: var(--padding-y) var(--padding-tablet-x);
+    padding-bottom: 100px;
   }
 
   @media (max-width: $mobile-mediaquery-width) {
     padding: var(--padding-y) var(--padding-mobile-x);
+    padding-bottom: 100px;
   }
 
   &__caption {

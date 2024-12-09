@@ -6,6 +6,7 @@ import { Header } from "@/widgets/Header";
 import { PageOpenAnimation } from "@/shared/ui-kit/PageOpenAnimation";
 import { tablet_mediaQuery } from "@/shared/const/global";
 import { Flex } from "@/shared/lib/Stack";
+import { Footer } from "@/widgets/Footer";
 
 export const App = () => {
   return (
@@ -14,12 +15,13 @@ export const App = () => {
         <Suspense>
           <Header />
           <MainPage />
+          <Footer />
 
           <PageOpenAnimation />
         </Suspense>
       ) : (
         // TODO: убрать заглушку для мобилок
-        <Flex className="mobile_zaglushka" maxWidth justify="center">
+        <Flex className="zaglushka" maxWidth justify="center">
           <p>
             На данный момент сайт недоступен на мобильных и планшетных
             устройствах.

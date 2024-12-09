@@ -1,16 +1,16 @@
 import styles from "./Header.module.scss";
 import { memo } from "react";
 import { Flex } from "@/shared/lib/Stack";
-import LogoSVG from "@/shared/assets/icons/global/LogoSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import TelegramCircleSVG from "@/shared/assets/icons/global/TelegramCircleSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
+import { Logo } from "@/shared/ui-kit/Logo";
 
 export const Header: React.FC = memo((): React.JSX.Element => {
   return (
     <header className={styles.Header}>
       <Flex gap="15">
-        <LogoSVG className={styles.Header__logo} />
+        <Logo />
 
         <h2 className={styles.Header__caption}>
           ИСТОЧНИК
