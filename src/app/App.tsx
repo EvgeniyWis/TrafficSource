@@ -21,7 +21,7 @@ export const App = () => {
         </Suspense>
       ) : (
         // TODO: убрать заглушку для мобилок
-        <Flex className="mobile_zaglushka" maxWidth justify="center">
+        <Flex className="zaglushka" maxWidth justify="center">
           <p>
             На данный момент сайт недоступен на мобильных и планшетных
             устройствах.

@@ -1,6 +1,6 @@
 import { Flex } from "@/shared/lib/Stack";
 import styles from "./WhyWe.module.scss";
-import { memo, useContext, useState } from "react";
+import { memo, useContext, useEffect, useRef, useState } from "react";
 import SpinnedLineSVG from "@/shared/assets/icons/WhyWe/SpinnedLineSVG.svg?react";
 import ScanVioletSphereSVG from "@/shared/assets/icons/WhyWe/ScanVioletSphereSVG.svg?react";
 import ScanArrowSVG from "@/shared/assets/icons/WhyWe/ScanArrowSVG.svg?react";
@@ -12,16 +12,24 @@ import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import EmailSVG from "@/shared/assets/icons/global/EmailSVG.svg?react";
 
 export const WhyWe: React.FC = memo((): React.JSX.Element => {
-  const { scrollPosition } = useContext(MainPageContext);
-
   // Нажатие на кнопку и появление блока
   const [isBlockVisible, setIsBlockVisible] = useState(false);
+
+  // Появление анимации линии вокруг текста
+  const { scrollPosition } = useContext(MainPageContext);
+  const isSpinnedLineVisible = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (scrollPosition == "WhyWe") {
+      isSpinnedLineVisible.current = true;
+    }
+  }, [scrollPosition]);
 
   return (
     <Flex direction="column" id="WhyWe" className={styles.WhyWe}>
       <h2 className={styles.WhyWe__caption}>
         ПОЧЕМУ ВЫ <br /> ВЫБЕРЕТЕ НАС?
-        {scrollPosition == "WhyWe" && (
+        {isSpinnedLineVisible.current && (
           <SpinnedLineSVG className={styles.WhyWe__caption__line} />
         )}
       </h2>

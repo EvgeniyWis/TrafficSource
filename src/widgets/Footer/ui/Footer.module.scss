@@ -1,3 +1,76 @@
-.Footer {
+@import "@/app/styles/ScssVars";
 
+.Footer {
+  height: 375px;
+  position: relative;
+  background-image: url("@/shared/assets/images/Footer/FooterBG.webp");
+  background-size: cover;
+  padding: 60px var(--padding-x);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  @media (max-width: $tablet-mediaquery-width) {
+    padding: 60px var(--padding-tablet-x);
+  }
+
+  @media (max-width: $mobile-mediaquery-width) {
+    padding: 60px var(--padding-mobile-x);
+  }
+
+  &__caption {
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+  }
+
+  &__subcaption {
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.4;
+    transition: var(--transition-duration-default) linear opacity;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__contact {
+    transition: var(--transition-duration-default) linear scale;
+    cursor: pointer;
+
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &__rights {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+    color: #fff;
+  }
+
+  &__legal {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+    color: #fff;
+    opacity: 0.6;
+  }
 }

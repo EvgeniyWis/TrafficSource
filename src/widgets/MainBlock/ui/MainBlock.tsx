@@ -149,23 +149,27 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         </Flex>
       </Flex>
 
-      <Suspense>
-        <Spline
-          id="MainBlock__footer__bg__first"
-          className={`${styles.MainBlock__footer__bg} 
+      {["MainBlock", "WhyWe"].includes(scrollPosition) && (
+        <Suspense>
+          <Spline
+            id="MainBlock__footer__bg__first"
+            className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-          scene="https://prod.spline.design/msDDGYrhdTBi0rD7/scene.splinecode"
-        />
-      </Suspense>
+            scene="https://prod.spline.design/msDDGYrhdTBi0rD7/scene.splinecode"
+          />
+        </Suspense>
+      )}
 
-      <Suspense>
-        <Spline
-          id="MainBlock__footer__bg__second"
-          className={`${styles.MainBlock__footer__bg} 
+      {["MainBlock", "WhyWe"].includes(scrollPosition) && (
+        <Suspense>
+          <Spline
+            id="MainBlock__footer__bg__second"
+            className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-          scene="https://prod.spline.design/6MIJPixCh-Tjxefp/scene.splinecode"
-        />
-      </Suspense>
+            scene="https://prod.spline.design/6MIJPixCh-Tjxefp/scene.splinecode"
+          />
+        </Suspense>
+      )}
     </Flex>
   );
 });
