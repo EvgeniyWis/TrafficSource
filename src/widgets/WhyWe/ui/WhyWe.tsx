@@ -184,8 +184,6 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           </Flex>
         </Flex>
       )}
-
-      <Button themes={["withBG", "big-x-padding"]}>Почему?</Button>
     </Flex>
   );
 });
