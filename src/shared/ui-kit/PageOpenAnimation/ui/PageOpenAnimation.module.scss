@@ -1,4 +1,4 @@
-@use "sass:color" as *;
+@use "sass:color";
 
 $bar-color: #2b4250;
 
@@ -14,9 +14,9 @@ $bar-color: #2b4250;
     background: $bar-color;
     top: 0;
     bottom: 0;
-    transform: scale(0, 1) translate3d(0, 0, 0);
+    transform: scale(0, 1);
     transform-origin: 100% 100%;
-    transition: transform var(--transition-duration-medium) ease-in-out;
+    transition: var(--transition-duration-medium) ease-in-out transform;
 
     &:first-of-type {
       border-left: none;
@@ -39,7 +39,7 @@ $bar-color: #2b4250;
 
   &__show {
     .PageOpenAnimation__bar {
-      transform: scale(1, 1) translate3d(0, 0, 0);
+      transform: scale(1, 1);
       transform-origin: 0 0;
     }
   }
