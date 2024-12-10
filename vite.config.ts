@@ -9,7 +9,7 @@ const aliases = {
 
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: "/TrafficSource/",
+  base: "/",
   resolve: {
     alias: aliases,
   },
