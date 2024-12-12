@@ -23,17 +23,6 @@ export const Header: React.FC = memo((): React.JSX.Element => {
         <ul className={styles.Header__navList}>
           <li
             onClick={() =>
-              document.getElementById("Services")!.scrollIntoView({
-                behavior: "smooth",
-              })
-            }
-            className={styles.Header__navList__item}
-          >
-            Услуги
-          </li>
-
-          <li
-            onClick={() =>
               document.getElementById("WhyWe")!.scrollIntoView({
                 behavior: "smooth",
               })
@@ -41,6 +30,17 @@ export const Header: React.FC = memo((): React.JSX.Element => {
             className={styles.Header__navList__item}
           >
             О нас
+          </li>
+
+          <li
+            onClick={() =>
+              document.getElementById("Services")!.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+            className={styles.Header__navList__item}
+          >
+            Услуги
           </li>
 
           <li
