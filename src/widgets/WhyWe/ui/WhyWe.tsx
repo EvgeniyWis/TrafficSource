@@ -1,6 +1,6 @@
 import { Flex } from "@/shared/lib/Stack";
 import styles from "./WhyWe.module.scss";
-import { memo, useContext, useEffect, useRef, useState } from "react";
+import { memo, useContext, useRef, useState } from "react";
 import SpinnedLineSVG from "@/shared/assets/icons/WhyWe/SpinnedLineSVG.svg?react";
 import ScanVioletSphereSVG from "@/shared/assets/icons/WhyWe/ScanVioletSphereSVG.svg?react";
 import ScanArrowSVG from "@/shared/assets/icons/WhyWe/ScanArrowSVG.svg?react";
@@ -19,11 +19,9 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
   const isSpinnedLineVisible = useRef<boolean>(false);
 
-  useEffect(() => {
-    if (scrollPosition == "WhyWe") {
-      isSpinnedLineVisible.current = true;
-    }
-  }, [scrollPosition]);
+  if (scrollPosition == "WhyWe" && !isSpinnedLineVisible.current) {
+    isSpinnedLineVisible.current = true;
+  }
 
   return (
     <Flex direction="column" id="WhyWe" className={styles.WhyWe}>
