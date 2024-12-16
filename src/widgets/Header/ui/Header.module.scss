@@ -1,11 +1,13 @@
 @use "@/app/styles/ScssVars" as *;
 
+$border-radius: 11px;
+
 .Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: calc(100% - (var(--padding-x) * 2));
-  height: var(--header-height);
+  height: 80px;
   border-radius: 30px;
   backdrop-filter: blur(50px);
   background: rgba(17 17 17 / 40%);
@@ -19,6 +21,12 @@
     margin: var(--padding-y) var(--padding-tablet-x);
   }
 
+  @media (max-width: $tablet-smaller-mediaquery-width) {
+    padding: 5px 10px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
   @media (max-width: $mobile-mediaquery-width) {
     width: calc(100% - (var(--padding-mobile-x) * 2));
     margin: var(--padding-y) var(--padding-mobile-x);
@@ -29,6 +37,10 @@
     font-size: 14px;
     color: var(--color-white);
     opacity: 1;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      font-size: 7px;
+    }
   }
 
   &__navList {
@@ -47,6 +59,10 @@
       &:hover {
         opacity: 1;
       }
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        padding: 10px 0;
+      }
     }
   }
 
@@ -55,6 +71,84 @@
 
     &:hover {
       scale: 1.05;
+    }
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__contacts {
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__burger {
+    cursor: pointer;
+
+    rect {
+      position: relative;
+      transition: 0.3s linear;
+      transition-property: transform;
+    }
+
+    &__active {
+      svg {
+        overflow: visible;
+      }
+
+      rect {
+        &:nth-of-type(1) {
+          transform: rotate(45deg) translateX(-8%);
+        }
+
+        &:nth-of-type(2) {
+          transform: rotate(-45deg) translateX(-55%);
+        }
+      }
+    }
+
+    &__items {
+      position: relative;
+      z-index: var(--z-index-one);
+      inset: 0;
+      padding: 8px 0;
+      box-shadow: 0 10px 15px 0 #1c181e;
+      background: #1c181e;
+      border-radius: $border-radius;
+
+      &__bg {
+        border-radius: $border-radius;
+        background: linear-gradient(to top, #000, #636262, #fff);
+        position: absolute;
+        z-index: var(--z-index-zero);
+        inset: 0;
+        scale: 1.015;
+        width: 100%;
+      }
+
+      &Wrapper {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        opacity: 0;
+        transform: translateY(-10%);
+        z-index: var(--z-index-hidden);
+        transition: var(--transition-duration-default) linear;
+        transition-property: opacity, transform;
+        width: 185px;
+
+        &__active {
+          opacity: 1;
+          transform: translateY(10%);
+          z-index: var(--z-index-zero);
+        }
+      }
     }
   }
 }

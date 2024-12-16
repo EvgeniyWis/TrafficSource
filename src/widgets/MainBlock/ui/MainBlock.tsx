@@ -2,6 +2,8 @@ import { Flex } from "@/shared/lib/Stack";
 import styles from "./MainBlock.module.scss";
 import { lazy, memo, Suspense, useContext, useEffect } from "react";
 import { MainPageContext } from "@/pages/MainPage";
+import { tablet_smaller_mediaQuery_width } from "@/shared/const/global";
+import { randomIntFromInterval } from "@/shared/utils/randomIntFromInterval";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -27,11 +29,31 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
 
   useEffect(() => {
     const categories = document.querySelectorAll(".MainBlock__bg__category");
+    let intervals: NodeJS.Timeout[] = [];
 
     for (const category of categories) {
-      document.addEventListener("mousemove", (event) =>
-        categoryHover(event, category),
-      );
+      if (!tablet_smaller_mediaQuery_width.matches) {
+        document.addEventListener("mousemove", (event) =>
+          categoryHover(event, category),
+        );
+      } else {
+        // Реализация того, чтобы на мобилке плашки загорались автоматически
+        const categoryIndex = intervals.length / 2 + 1;
+        const randomInterval =
+          (categoryIndex + randomIntFromInterval(1, 2)) * 1000;
+
+        intervals.push(
+          setInterval(() => {
+            category.classList.add(styles.MainBlock__bg__category__hover);
+          }, randomInterval),
+        );
+
+        intervals.push(
+          setInterval(() => {
+            category.classList.remove(styles.MainBlock__bg__category__hover);
+          }, randomInterval * 2),
+        );
+      }
     }
 
     return () => {
@@ -39,6 +61,10 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         document.removeEventListener("mousemove", (event) =>
           categoryHover(event, category),
         );
+      }
+
+      for (const interval of intervals) {
+        clearInterval(interval);
       }
     };
   }, []);

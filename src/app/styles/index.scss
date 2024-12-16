@@ -27,9 +27,6 @@
   --transition-duration-medium: 0.8s;
   --transition-duration-long: 2.5s;
 
-  // Heights
-  --header-height: 80px;
-
   // Colors
   --color-white: #fff;
   --color-gray: rgba(255 255 255 / 40%);
@@ -58,8 +55,7 @@ body {
   background: #1f272a;
 }
 
-// TODO: убрать заглушку для мобилок
-.zaglushka {
+.plug {
   height: 100vh;
   text-align: center;
   color: var(--color-white);

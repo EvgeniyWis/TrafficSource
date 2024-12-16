@@ -113,17 +113,17 @@ export const Flex = (props: FlexProps) => {
   } = props;
 
   const classes = [
-    className,
+    styles.Flex,
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
     gap && gapClasses[gap],
     width && widthClasses[width],
-    styles.Flex,
     maxWidth && styles.maxWidth,
     maxHeight && styles.maxHeight,
     relative && styles.relative,
     wrap && styles.wrap,
+    className,
   ];
 
   return (

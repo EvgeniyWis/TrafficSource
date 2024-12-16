@@ -1,8 +1,21 @@
+@use "@/app/styles/ScssVars" as *;
+
 .Logo {
   opacity: 0.4;
   transition: opacity linear var(--transition-duration-long);
   cursor: pointer;
   overflow: visible;
+
+  @media (max-width: $tablet-smaller-mediaquery-width) {
+    width: 20px;
+    height: 26px;
+    opacity: 1;
+
+    circle {
+      stroke: white;
+      animation-play-state: running;
+    }
+  }
 
   circle {
     animation: logo-circle-anim var(--transition-duration-long) linear paused

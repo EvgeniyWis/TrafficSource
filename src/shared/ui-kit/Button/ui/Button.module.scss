@@ -1,8 +1,12 @@
+@use "@/app/styles/ScssVars" as *;
+
+$border-radius: 21px;
+
 .Button {
   padding: 20px;
   text-align: center;
   border: 1px solid var(--color-white);
-  border-radius: 21px;
+  border-radius: $border-radius;
   font-weight: 500;
   font-size: 14px;
   color: var(--color-white);
@@ -10,6 +14,16 @@
   position: relative;
   background: transparent;
   transition: var(--transition-duration-default) linear all;
+
+  @media (max-width: $tablet-smaller-mediaquery-width) {
+    $border-radius: 10px;
+
+    font-size: 10px;
+    font-weight: 600;
+    padding: 13px;
+    border-width: 0.68px;
+    border-radius: $border-radius;
+  }
 
   &__bg {
     right: 0;
@@ -19,9 +33,15 @@
     height: 100%;
     background: linear-gradient(28deg, #ac70fa 0%, #fe4f74 100%);
     opacity: 0;
-    border-radius: 21px;
+    border-radius: $border-radius;
     z-index: var(--z-index-hidden);
     transition: var(--transition-duration-default) linear opacity;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      $border-radius: 10px;
+
+      border-radius: $border-radius;
+    }
   }
 
   &:hover {
