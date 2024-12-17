@@ -102,7 +102,11 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
               style={{ display: isAnimVisible ? "block" : "none" }}
               className={`${styles.MainBlock__bgCircles} 
             ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
-              scene="splines/CirclesAnim.splinecode"
+              scene={
+                mobile_mediaQuery_width.matches
+                  ? "https://prod.spline.design/0mpoLPfOhbSOEkoi/scene.splinecode"
+                  : "splines/CirclesAnim.splinecode"
+              }
             />
           </Suspense>
 
@@ -199,7 +203,6 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         <Suspense>
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
-            id="MainBlock__footer__bg__first"
             className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/LeftLineAnim.splinecode"
@@ -211,7 +214,6 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         <Suspense>
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
-            id="MainBlock__footer__bg__second"
             className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/RightLineAnim.splinecode"
@@ -220,10 +222,14 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
       )}
 
       {mobile_mediaQuery_width.matches && (
-        <img
-          src="images/MainBlock/AdaptiveLine.webp"
-          className={styles.MainBlock__adaptive__line}
-        />
+        <Suspense>
+          <Spline
+            style={{ display: isAnimVisible ? "block" : "none" }}
+            id="MainBlock__footer__bg__second"
+            className={styles.MainBlock__adaptive__line}
+            scene="splines/AdaptiveLineAnim.splinecode"
+          />
+        </Suspense>
       )}
     </Flex>
   );

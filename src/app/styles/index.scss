@@ -53,6 +53,10 @@ body {
   font-family: var(--font-family);
   overflow-y: hidden;
   background: #1f272a;
+
+  @media (max-width: $mobile-mediaquery-width) {
+    background-image: url("@/shared/assets/images/global/AdaptiveBG.webp");
+  }
 }
 
 .plug {

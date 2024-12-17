@@ -12,6 +12,10 @@
   }
 
   @media (max-width: $mobile-mediaquery-width) {
+    background: none;
+  }
+
+  @media (max-width: $mobile-mediaquery-width) {
     padding: var(--padding-y) var(--padding-mobile-x);
   }
 
