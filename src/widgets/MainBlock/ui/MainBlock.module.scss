@@ -25,6 +25,10 @@ $main-block-height: 900px;
     background: linear-gradient(90deg, #fe4f74 0%, #a972ff 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      font-size: 25px;
+    }
   }
 
   &__subcaption {
@@ -33,6 +37,10 @@ $main-block-height: 900px;
     background: linear-gradient(90deg, #ff4f74 0%, #857fff 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      font-size: 12px;
+    }
   }
 
   &__bg {
@@ -61,25 +69,52 @@ $main-block-height: 900px;
       transition: var(--transition-duration-medium) linear box-shadow;
       box-shadow: 0 0 20px transparent;
 
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        width: 82px;
+        height: 28px;
+        border-radius: 17px;
+      }
+
       &:nth-of-type(2) {
         top: 90px;
         left: 35%;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          left: 42%;
+          top: 150px;
+        }
       }
 
       &:nth-of-type(3) {
         top: 380px;
         left: 34%;
         width: 202px;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          width: 116px;
+          left: 41%;
+          top: 320px;
+        }
       }
 
       &:nth-of-type(4) {
         top: 70px;
         right: 35%;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          right: 42%;
+          top: 130px;
+        }
       }
 
       &:nth-of-type(5) {
         top: 400px;
         right: 34%;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          right: 43%;
+          top: 310px;
+        }
       }
 
       &__text {
@@ -88,6 +123,10 @@ $main-block-height: 900px;
         color: rgba(255 255 255 / 10%);
         transition: var(--transition-duration-medium) linear;
         transition-property: color, text-shadow;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          font-size: 13px;
+        }
       }
 
       &__hover {
@@ -105,10 +144,18 @@ $main-block-height: 900px;
     position: relative;
     top: calc($main-block-height / 3.5);
 
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      top: calc($main-block-height / 5);
+    }
+
     &__caption {
       font-weight: 600;
       font-size: 24px;
       color: var(--color-white);
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        font-size: 12px;
+      }
     }
 
     &__desc {
@@ -116,6 +163,10 @@ $main-block-height: 900px;
       font-size: 14px;
       color: var(--color-white);
       opacity: 0.4;
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        font-size: 8px;
+      }
     }
 
     &__step {
@@ -123,6 +174,10 @@ $main-block-height: 900px;
       font-size: 24px;
       color: var(--color-white);
       opacity: 0.4;
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        font-size: 10px;
+      }
 
       &::after {
         content: "•";
@@ -155,12 +210,34 @@ $main-block-height: 900px;
         @media (max-width: $laptop-mediaquery-width) {
           bottom: -90%;
         }
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          bottom: -75%;
+          right: 50%;
+        }
       }
 
       &:nth-of-type(4) {
         left: 70%;
         bottom: -35%;
         rotate: 340deg;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          bottom: -45%;
+          left: 55%;
+        }
+      }
+    }
+  }
+
+  &__adaptive {
+    &__line {
+      width: 100%;
+      position: absolute;
+      bottom: -45vw;
+
+      @media (max-width: $mobile-smaller-mediaquery-width) {
+        bottom: -30vw;
       }
     }
   }

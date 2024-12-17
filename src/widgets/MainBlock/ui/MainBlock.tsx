@@ -2,7 +2,10 @@ import { Flex } from "@/shared/lib/Stack";
 import styles from "./MainBlock.module.scss";
 import { lazy, memo, Suspense, useContext, useEffect } from "react";
 import { MainPageContext } from "@/pages/MainPage";
-import { tablet_smaller_mediaQuery_width } from "@/shared/const/global";
+import {
+  mobile_mediaQuery_width,
+  tablet_smaller_mediaQuery_width,
+} from "@/shared/const/global";
 import { randomIntFromInterval } from "@/shared/utils/randomIntFromInterval";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -38,7 +41,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         );
       } else {
         // Реализация того, чтобы на мобилке плашки загорались автоматически
-        const categoryIndex = intervals.length / 2 + 1;
+        const categoryIndex = intervals.length + 1;
         const randomInterval =
           (categoryIndex + randomIntFromInterval(1, 2)) * 1000;
 
@@ -80,6 +83,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
       id="MainBlock"
       justify="center"
       direction="column"
+      relative
       className={styles.MainBlock}
     >
       <Flex direction="column">
@@ -148,7 +152,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         <Flex
           align="start"
           gap="10"
-          width="30"
+          width={tablet_smaller_mediaQuery_width.matches ? "90" : "30"}
           className={styles.MainBlock__footer__caption}
           direction="column"
         >
@@ -162,40 +166,65 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           </p>
         </Flex>
 
-        <Flex gap="10">
-          <Flex gap="10" className={styles.MainBlock__footer__step}>
+        <Flex
+          wrap
+          justify="end"
+          maxWidth
+          gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+        >
+          <Flex
+            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            className={styles.MainBlock__footer__step}
+          >
             Привлечение
           </Flex>
 
-          <Flex gap="10" className={styles.MainBlock__footer__step}>
+          <Flex
+            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            className={styles.MainBlock__footer__step}
+          >
             Вовлечение
           </Flex>
 
-          <Flex gap="10" className={styles.MainBlock__footer__step}>
+          <Flex
+            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            className={styles.MainBlock__footer__step}
+          >
             Закрытие
           </Flex>
         </Flex>
       </Flex>
 
-      <Suspense>
-        <Spline
-          style={{ display: isAnimVisible ? "block" : "none" }}
-          id="MainBlock__footer__bg__first"
-          className={`${styles.MainBlock__footer__bg} 
+      {!mobile_mediaQuery_width.matches && (
+        <Suspense>
+          <Spline
+            style={{ display: isAnimVisible ? "block" : "none" }}
+            id="MainBlock__footer__bg__first"
+            className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-          scene="splines/LeftLineAnim.splinecode"
-        />
-      </Suspense>
+            scene="splines/LeftLineAnim.splinecode"
+          />
+        </Suspense>
+      )}
 
-      <Suspense>
-        <Spline
-          style={{ display: isAnimVisible ? "block" : "none" }}
-          id="MainBlock__footer__bg__second"
-          className={`${styles.MainBlock__footer__bg} 
+      {!mobile_mediaQuery_width.matches && (
+        <Suspense>
+          <Spline
+            style={{ display: isAnimVisible ? "block" : "none" }}
+            id="MainBlock__footer__bg__second"
+            className={`${styles.MainBlock__footer__bg} 
         ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
-          scene="splines/RightLineAnim.splinecode"
+            scene="splines/RightLineAnim.splinecode"
+          />
+        </Suspense>
+      )}
+
+      {mobile_mediaQuery_width.matches && (
+        <img
+          src="images/MainBlock/AdaptiveLine.webp"
+          className={styles.MainBlock__adaptive__line}
         />
-      </Suspense>
+      )}
     </Flex>
   );
 });
