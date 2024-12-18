@@ -2,16 +2,28 @@ import { Flex } from "@/shared/lib/Stack";
 import styles from "./Footer.module.scss";
 import { memo } from "react";
 import FooterLogoSVG from "@/shared/assets/icons/Footer/FooterLogoSVG.svg?react";
+import FooterLogoAdaptiveSVG from "@/shared/assets/icons/Footer/FooterLogoAdaptiveSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import TelegramCircleSVG from "@/shared/assets/icons/global/TelegramCircleSVG.svg?react";
 import EmailCircleSVG from "@/shared/assets/icons/global/EmailCircleSVG.svg?react";
+import { mobile_mediaQuery_width } from "@/shared/const/global";
 
 export const Footer: React.FC = memo((): React.JSX.Element => {
   return (
     <footer id="Footer" className={styles.Footer}>
-      <Flex align="start" maxHeight justify="between" direction="column">
-        <Flex gap="20">
-          <FooterLogoSVG />
+      <Flex
+        gap={mobile_mediaQuery_width.matches ? "20" : "0"}
+        align="start"
+        maxHeight
+        justify="between"
+        direction="column"
+      >
+        <Flex gap={mobile_mediaQuery_width.matches ? "10" : "20"}>
+          {mobile_mediaQuery_width.matches ? (
+            <FooterLogoAdaptiveSVG />
+          ) : (
+            <FooterLogoSVG />
+          )}
 
           <h2 className={styles.Footer__caption}>
             ИСТОЧНИК
@@ -20,11 +32,22 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
           </h2>
         </Flex>
 
-        <Flex gap="50">
-          <Flex align="start" gap="15" direction="column">
+        <Flex
+          direction={mobile_mediaQuery_width.matches ? "column" : "row"}
+          gap={mobile_mediaQuery_width.matches ? "30" : "50"}
+        >
+          <Flex
+            align="start"
+            gap={mobile_mediaQuery_width.matches ? "5" : "15"}
+            direction="column"
+          >
             <h6 className={styles.Footer__subcaption}>Контакты</h6>
 
-            <Flex align="start" gap="10" direction="column">
+            <Flex
+              align="start"
+              gap={mobile_mediaQuery_width.matches ? "0" : "10"}
+              direction="column"
+            >
               <a
                 className={styles.Footer__link}
                 href="mailto: traffic_krd23@mail.ru"
@@ -43,10 +66,14 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
             </Flex>
           </Flex>
 
-          <Flex align="start" gap="15" direction="column">
+          <Flex
+            align="start"
+            gap={mobile_mediaQuery_width.matches ? "10" : "15"}
+            direction="column"
+          >
             <h6 className={styles.Footer__subcaption}>Социальные сети</h6>
 
-            <Flex gap="20">
+            <Flex gap={mobile_mediaQuery_width.matches ? "15" : "20"}>
               <a
                 className={styles.Footer__contact}
                 target="_blank"

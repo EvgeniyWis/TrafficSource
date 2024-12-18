@@ -90,7 +90,6 @@ export interface FlexProps extends DivProps {
   direction?: FlexDirection;
   wrap?: boolean;
   gap?: FlexGap;
-  maxWidth?: boolean;
   maxHeight?: boolean;
   width?: FlexWitdth;
   innerRef?: React.LegacyRef<HTMLDivElement>;
@@ -105,7 +104,6 @@ export const Flex = (props: FlexProps) => {
     align = "center",
     direction = "row",
     gap,
-    maxWidth,
     maxHeight,
     innerRef,
     wrap,
@@ -121,7 +119,6 @@ export const Flex = (props: FlexProps) => {
     directionClasses[direction],
     gap && gapClasses[gap],
     width && widthClasses[width],
-    maxWidth && styles.maxWidth,
     maxHeight && styles.maxHeight,
     relative && styles.relative,
     wrap && styles.wrap,

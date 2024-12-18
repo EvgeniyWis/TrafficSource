@@ -51,7 +51,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
       {isBlockVisible && (
         <Flex
           className={styles.WhyWe__block}
-          maxWidth
+          width="100"
           align="start"
           justify="between"
           gap={tablet_smaller_mediaQuery_width.matches ? "30" : "50"}
@@ -125,7 +125,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
               direction="column"
               justify="between"
             >
-              <Flex maxWidth justify="between">
+              <Flex width="100" justify="between">
                 <Flex
                   direction="column"
                   justify="between"
@@ -163,7 +163,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                 )}
               </Flex>
 
-              <Flex maxWidth gap="10" direction="column">
+              <Flex width="100" gap="10" direction="column">
                 <Button themes={["withMoreDarkBG", "maxWidth"]}>
                   <a
                     className={styles.WhyWe__block__marketing__button}
@@ -181,7 +181,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                   direction={
                     !tablet_smaller_mediaQuery_width.matches ? "row" : "column"
                   }
-                  maxWidth
+                  width="100"
                   gap="10"
                 >
                   <Button themes={["withMoreDarkBG", "maxWidth"]}>
@@ -247,7 +247,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                   !tablet_smaller_mediaQuery_width.matches ? "end" : "between"
                 }
                 gap="5"
-                maxWidth
+                width="100"
               >
                 <img src="images/WhyWe/WhatsAppQR.webp" alt="+79213299965" />
                 <img

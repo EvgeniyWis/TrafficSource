@@ -17,18 +17,27 @@
 
   @media (max-width: $mobile-mediaquery-width) {
     padding: 60px var(--padding-mobile-x);
+    height: 300px;
   }
 
   &__caption {
     font-weight: 700;
     font-size: 26px;
     color: #fff;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 9px;
+    }
   }
 
   &__subcaption {
     font-weight: 600;
     font-size: 22px;
     color: #fff;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 12px;
+    }
   }
 
   &__link {
@@ -38,6 +47,10 @@
     opacity: 0.4;
     transition: var(--transition-duration-default) linear opacity;
     cursor: pointer;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 10px;
+    }
 
     &:hover {
       opacity: 1;
@@ -51,6 +64,11 @@
     svg {
       width: 35px;
       height: 35px;
+
+      @media (max-width: $mobile-mediaquery-width) {
+        width: 23px;
+        height: 23px;
+      }
     }
 
     &:hover {
@@ -63,6 +81,11 @@
     font-size: 14px;
     text-align: right;
     color: #fff;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 8px;
+      margin-bottom: 15px;
+    }
   }
 
   &__legal {
@@ -72,5 +95,9 @@
     text-align: right;
     color: #fff;
     opacity: 0.6;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 8px;
+    }
   }
 }

@@ -106,7 +106,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
           >
             <Flex
               className={styles.Header__burger__items}
-              maxWidth
+              width="100"
               direction="column"
             >
               <a

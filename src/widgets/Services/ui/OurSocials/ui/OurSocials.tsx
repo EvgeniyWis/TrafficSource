@@ -9,7 +9,7 @@ import { Button } from "@/shared/ui-kit/Button";
 export const OurSocials: React.FC = memo((): React.JSX.Element => {
   return (
     <Flex
-      maxWidth
+      width="100"
       direction="column"
       justify="between"
       className={styles.OurSocials}
@@ -22,7 +22,7 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
         </p>
       </Flex>
 
-      <Flex maxWidth direction="column" gap="5">
+      <Flex width="100" direction="column" gap="5">
         <Button
           className={styles.OurSocials__button}
           themes={["withMoreDarkBG", "maxWidth"]}

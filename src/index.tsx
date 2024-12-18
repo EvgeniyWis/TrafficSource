@@ -17,7 +17,7 @@ const root = createRoot(container);
 root.render(
   <ErrorBoundary
     fallback={
-      <Flex className="plug" maxWidth justify="center">
+      <Flex className="plug" width="100" justify="center">
         <p>
           На сайте возникла непредвиденная техническая ошибка.
           <br />

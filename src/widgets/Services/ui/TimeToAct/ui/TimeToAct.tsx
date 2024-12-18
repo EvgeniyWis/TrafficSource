@@ -7,13 +7,13 @@ import { Button } from "@/shared/ui-kit/Button";
 export const TimeToAct: React.FC = memo((): React.JSX.Element => {
   return (
     <Flex
-      maxWidth
+      width="100"
       justify="between"
       direction="column"
       className={styles.TimeToAct}
     >
       <Flex direction="column" gap="15">
-        <Flex maxWidth justify="between" align="start">
+        <Flex width="100" justify="between" align="start">
           <h5 className={styles.TimeToAct__caption}>Время Действовать</h5>
 
           <TelegramCircleDarkSVG />

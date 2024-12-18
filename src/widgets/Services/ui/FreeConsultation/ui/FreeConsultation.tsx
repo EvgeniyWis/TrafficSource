@@ -7,12 +7,12 @@ import { Button } from "@/shared/ui-kit/Button";
 export const FreeConsultation: React.FC = memo((): React.JSX.Element => {
   return (
     <Flex
-      maxWidth
+      width="100"
       justify="between"
       direction="column"
       className={styles.FreeConsultation}
     >
-      <Flex maxWidth justify="between">
+      <Flex width="100" justify="between">
         <Flex width="75" gap="20" direction="column">
           <h5 className={styles.FreeConsultation__caption}>
             Получите экспертизу и советы от профессионалов!

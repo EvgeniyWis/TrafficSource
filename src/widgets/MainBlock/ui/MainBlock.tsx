@@ -150,7 +150,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
       <Flex
         className={styles.MainBlock__footer}
         align="end"
-        maxWidth
+        width="100"
         justify="between"
       >
         <Flex
@@ -173,7 +173,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         <Flex
           wrap
           justify="end"
-          maxWidth
+          width="100"
           gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
         >
           <Flex
