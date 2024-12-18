@@ -1,3 +1,7 @@
+export const tablet_mediaQuery_width: MediaQueryList = window.matchMedia(
+  "(max-width: 1350px)",
+);
+
 export const tablet_smaller_mediaQuery_width: MediaQueryList =
   window.matchMedia("(max-width: 1000px)");
 

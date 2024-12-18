@@ -132,12 +132,24 @@ $border-radius: 21px;
 
   &__big-x-padding {
     padding: 20px 57px;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      padding: 10px 28px;
+      font-size: 12px;
+      font-weight: 500;
+    }
   }
 
   &__withMoreDarkBG {
     background: #1b1b1b;
     border: 1px solid #fe4f74;
     padding: 12.5px;
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      $border-radius: 30px;
+
+      border-radius: $border-radius;
+    }
   }
 
   &__maxWidth {

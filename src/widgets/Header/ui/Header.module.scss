@@ -142,11 +142,13 @@ $border-radius: 11px;
         transition: var(--transition-duration-default) linear;
         transition-property: opacity, transform;
         width: 185px;
+        pointer-events: none;
 
         &__active {
           opacity: 1;
           transform: translateY(10%);
           z-index: var(--z-index-zero);
+          pointer-events: all;
         }
       }
     }

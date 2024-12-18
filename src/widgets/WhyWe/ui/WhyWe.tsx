@@ -3,13 +3,19 @@ import styles from "./WhyWe.module.scss";
 import { memo, useContext, useRef, useState } from "react";
 import SpinnedLineSVG from "@/shared/assets/icons/WhyWe/SpinnedLineSVG.svg?react";
 import ScanVioletSphereSVG from "@/shared/assets/icons/WhyWe/ScanVioletSphereSVG.svg?react";
+import ScanVioletSphereAdaptiveSVG from "@/shared/assets/icons/WhyWe/ScanVioletSphereAdaptiveSVG.svg?react";
 import ScanArrowSVG from "@/shared/assets/icons/WhyWe/ScanArrowSVG.svg?react";
+import ScanArrowAdaptiveSVG from "@/shared/assets/icons/WhyWe/ScanArrowAdaptiveSVG.svg?react";
 import { MainPageContext } from "@/pages/MainPage";
 import { Button } from "@/shared/ui-kit/Button";
 import AnimatedNumbers from "react-animated-numbers";
 import TelegramSVG from "@/shared/assets/icons/global/TelegramSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import EmailSVG from "@/shared/assets/icons/global/EmailSVG.svg?react";
+import {
+  tablet_mediaQuery_width,
+  tablet_smaller_mediaQuery_width,
+} from "@/shared/const/global";
 
 export const WhyWe: React.FC = memo((): React.JSX.Element => {
   // Нажатие на кнопку и появление блока
@@ -48,9 +54,15 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           maxWidth
           align="start"
           justify="between"
-          gap="50"
+          gap={tablet_smaller_mediaQuery_width.matches ? "30" : "50"}
+          direction={tablet_smaller_mediaQuery_width.matches ? "column" : "row"}
         >
-          <Flex align="start" width="25" gap="15" direction="column">
+          <Flex
+            align="start"
+            width={tablet_smaller_mediaQuery_width.matches ? "100" : "25"}
+            gap="15"
+            direction="column"
+          >
             <Flex
               className={styles.WhyWe__block__text}
               align="start"
@@ -93,27 +105,62 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           <Flex
             className={styles.WhyWe__block__marketing}
             justify="between"
-            align="start"
-            width="75"
+            align={tablet_smaller_mediaQuery_width.matches ? "center" : "start"}
+            width={tablet_smaller_mediaQuery_width.matches ? "100" : "75"}
             gap="10"
+            direction={
+              tablet_smaller_mediaQuery_width.matches ? "column" : "row"
+            }
           >
             <Flex
-              width="65"
+              width={
+                tablet_smaller_mediaQuery_width.matches
+                  ? "100"
+                  : tablet_mediaQuery_width.matches
+                    ? "50"
+                    : "65"
+              }
               maxHeight
               align="start"
               direction="column"
               justify="between"
             >
-              <Flex direction="column" justify="between" gap="20">
-                <h2 className={styles.WhyWe__block__marketing__caption}>
-                  ЭФФЕКТИВНЫЙ МАРКЕТИНГ
-                </h2>
+              <Flex maxWidth justify="between">
+                <Flex
+                  direction="column"
+                  justify="between"
+                  gap={tablet_smaller_mediaQuery_width.matches ? "10" : "20"}
+                  width={
+                    !tablet_smaller_mediaQuery_width.matches ? "100" : "80"
+                  }
+                  align="start"
+                >
+                  <h2 className={styles.WhyWe__block__marketing__caption}>
+                    ЭФФЕКТИВНЫЙ МАРКЕТИНГ
+                  </h2>
 
-                <p className={styles.WhyWe__block__marketing__desc}>
-                  Получите бесплатную консультацию и узнайте, как привлечь
-                  больше клиентов. Не забудьте следить за нами в соцсетях для
-                  полезных обновлений!
-                </p>
+                  <p className={styles.WhyWe__block__marketing__desc}>
+                    Получите бесплатную консультацию и узнайте, как привлечь
+                    больше клиентов. Не забудьте следить за нами в соцсетях для
+                    полезных обновлений!
+                  </p>
+                </Flex>
+
+                {tablet_smaller_mediaQuery_width.matches && (
+                  <Flex direction="column">
+                    <Flex
+                      className={styles.WhyWe__block__marketing__scan}
+                      align="center"
+                      relative
+                    >
+                      <ScanVioletSphereAdaptiveSVG />
+                    </Flex>
+
+                    <ScanArrowAdaptiveSVG
+                      className={styles.WhyWe__block__marketing__scan__arrow}
+                    />
+                  </Flex>
+                )}
               </Flex>
 
               <Flex maxWidth gap="10" direction="column">
@@ -130,7 +177,13 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                   </a>
                 </Button>
 
-                <Flex maxWidth gap="10">
+                <Flex
+                  direction={
+                    !tablet_smaller_mediaQuery_width.matches ? "row" : "column"
+                  }
+                  maxWidth
+                  gap="10"
+                >
                   <Button themes={["withMoreDarkBG", "maxWidth"]}>
                     <a
                       className={styles.WhyWe__block__marketing__button}
@@ -160,25 +213,41 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
               </Flex>
             </Flex>
 
-            <Flex width="35" justify="between" align="end" direction="column">
-              <Flex direction="column">
-                <Flex
-                  className={styles.WhyWe__block__marketing__scan}
-                  align="center"
-                  relative
-                >
-                  <ScanVioletSphereSVG />
-                </Flex>
+            <Flex
+              width={
+                tablet_smaller_mediaQuery_width.matches
+                  ? "100"
+                  : tablet_mediaQuery_width.matches
+                    ? "50"
+                    : "35"
+              }
+              justify="between"
+              align="end"
+              direction="column"
+            >
+              {!tablet_smaller_mediaQuery_width.matches && (
+                <Flex direction="column">
+                  <Flex
+                    className={styles.WhyWe__block__marketing__scan}
+                    align="center"
+                    relative
+                  >
+                    <ScanVioletSphereSVG />
+                  </Flex>
 
-                <ScanArrowSVG
-                  className={styles.WhyWe__block__marketing__scan__arrow}
-                />
-              </Flex>
+                  <ScanArrowSVG
+                    className={styles.WhyWe__block__marketing__scan__arrow}
+                  />
+                </Flex>
+              )}
 
               <Flex
                 className={styles.WhyWe__block__marketing__scan__qrs}
-                justify="between"
+                justify={
+                  !tablet_smaller_mediaQuery_width.matches ? "end" : "between"
+                }
                 gap="5"
+                maxWidth
               >
                 <img src="images/WhyWe/WhatsAppQR.webp" alt="+79213299965" />
                 <img

@@ -11,11 +11,12 @@
     padding: var(--padding-y) var(--padding-tablet-x);
   }
 
-  @media (max-width: $mobile-mediaquery-width) {
-    background: none;
+  @media (max-width: $tablet-smaller-mediaquery-width) {
+    height: 1500px;
   }
 
   @media (max-width: $mobile-mediaquery-width) {
+    background: none;
     padding: var(--padding-y) var(--padding-mobile-x);
   }
 
@@ -29,10 +30,21 @@
     position: relative;
     margin-bottom: 30px;
 
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 24px;
+    }
+
     &__line {
       position: absolute;
       top: 71px;
       left: -55px;
+
+      @media (max-width: $mobile-mediaquery-width) {
+        width: 130%;
+        height: 130%;
+        top: 4px;
+        left: -28px;
+      }
     }
   }
 
@@ -50,9 +62,15 @@
     opacity: 1;
     transform: translateY(-10%);
     padding: 40px 35px;
+    border: 1px solid var(--color-white);
 
     @media (max-width: $tablet-mediaquery-width) {
-      padding: 20px;
+      padding: 17px 19px;
+    }
+
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      height: auto;
+      margin-top: 50px;
     }
 
     @keyframes block-anim {
@@ -71,6 +89,10 @@
       border-bottom: 1px solid;
       border-image: linear-gradient(to right, #fe4f74 0%, #a972ff 100%) 1;
       padding-bottom: 54px;
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        padding-bottom: 45px;
+      }
     }
 
     @keyframes text-anim {
@@ -117,6 +139,10 @@
       font-size: 14px;
       color: var(--color-gray);
       animation: text-anim calc(var(--transition-duration-medium) + 0.7s) linear;
+
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        width: 70%;
+      }
     }
 
     &__marketing {
@@ -127,6 +153,10 @@
       animation: text-anim calc(var(--transition-duration-medium) + 0.3s) linear;
       height: 100%;
 
+      @media (max-width: $tablet-smaller-mediaquery-width) {
+        padding: 14px 11px;
+      }
+
       &__caption {
         font-weight: 700;
         font-size: 32px;
@@ -135,6 +165,10 @@
         background: linear-gradient(90deg, #fe4f74 0%, #a972ff 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          font-size: 24px;
+        }
       }
 
       &__desc {
@@ -143,12 +177,24 @@
         line-height: 110%;
         letter-spacing: -0.02em;
         color: var(--color-dark-gray);
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          margin-bottom: 40px;
+        }
       }
 
       &__button {
         font-weight: 600;
         font-size: 22px;
         letter-spacing: -0.02em;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          font-size: 20px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
 
       &__scan {
@@ -159,6 +205,17 @@
         position: relative;
         top: -20px;
         right: -20px;
+
+        @media (max-width: $tablet-smaller-mediaquery-width) {
+          padding: 15px;
+          right: 5px;
+          top: -15px;
+          background-image: url("@/shared/assets/icons/WhyWe/ScanRoundedTextAdaptiveSVG.svg");
+        }
+
+        @media (max-width: $mobile-smaller-mediaquery-width) {
+          top: -55px;
+        }
 
         @keyframes scan-anim {
           0% {
@@ -175,6 +232,15 @@
           left: 20px;
           bottom: 70px;
           animation: scan-arrow-anim 2.5s linear infinite;
+
+          @media (max-width: $tablet-smaller-mediaquery-width) {
+            left: -5px;
+            bottom: 55px;
+          }
+
+          @media (max-width: $mobile-smaller-mediaquery-width) {
+            bottom: 75px;
+          }
 
           @keyframes scan-arrow-anim {
             0% {
@@ -197,6 +263,11 @@
 
           @media (max-width: $tablet-mediaquery-width) {
             bottom: 0;
+          }
+
+          @media (max-width: $tablet-smaller-mediaquery-width) {
+            margin-top: 15px;
+            padding: 0 10px;
           }
         }
       }
