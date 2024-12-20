@@ -25,12 +25,12 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
   const isSpinnedLineVisible = useRef<boolean>(false);
 
-  if (scrollPosition == "WhyWe" && !isSpinnedLineVisible.current) {
+  if (scrollPosition == "WhyWeAnchor" && !isSpinnedLineVisible.current) {
     isSpinnedLineVisible.current = true;
   }
 
   return (
-    <Flex direction="column" id="WhyWe" className={styles.WhyWe}>
+    <Flex id="WhyWe" relative direction="column" className={styles.WhyWe}>
       <h2 className={styles.WhyWe__caption}>
         ПОЧЕМУ ВЫ <br /> ВЫБЕРЕТЕ НАС?
         {isSpinnedLineVisible.current && (
@@ -268,6 +268,8 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           </Flex>
         </Flex>
       )}
+
+      <span className={styles.WhyWe__anchor} id="WhyWeAnchor"></span>
     </Flex>
   );
 });

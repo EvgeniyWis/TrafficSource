@@ -76,7 +76,10 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
 
   // Оптимизация анимаций/скрытие вне видимости юзера
-  const isAnimVisible = ["MainBlock", "WhyWe"].includes(scrollPosition);
+  const BlocksWithAnims = mobile_mediaQuery_width.matches
+    ? ["MainBlock"]
+    : ["MainBlock", "WhyWeAnchor"];
+  const isAnimVisible = BlocksWithAnims.includes(scrollPosition);
 
   return (
     <Flex
@@ -204,7 +207,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWeAnchor" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/LeftLineAnim.splinecode"
           />
         </Suspense>
@@ -215,13 +218,13 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWeAnchor" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/RightLineAnim.splinecode"
           />
         </Suspense>
       )}
 
-      {mobile_mediaQuery_width.matches && (
+      {/* {mobile_mediaQuery_width.matches && (
         <Suspense>
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
@@ -230,7 +233,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
             scene="splines/AdaptiveLineAnim.splinecode"
           />
         </Suspense>
-      )}
+      )} */}
     </Flex>
   );
 });
