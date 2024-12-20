@@ -224,16 +224,14 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         </Suspense>
       )}
 
-      {/* {mobile_mediaQuery_width.matches && (
-        <Suspense>
-          <Spline
-            style={{ display: isAnimVisible ? "block" : "none" }}
-            id="MainBlock__footer__bg__second"
-            className={styles.MainBlock__adaptive__line}
-            scene="splines/AdaptiveLineAnim.splinecode"
-          />
-        </Suspense>
-      )} */}
+      {mobile_mediaQuery_width.matches && (
+        <img
+          loading="lazy"
+          style={{ display: isAnimVisible ? "block" : "none" }}
+          className={styles.MainBlock__adaptive__line}
+          src="images/MainBlock/AdaptiveLine.png"
+        />
+      )}
     </Flex>
   );
 });
