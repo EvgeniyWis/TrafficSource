@@ -227,7 +227,6 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
       {mobile_mediaQuery_width.matches && (
         <img
           loading="lazy"
-          style={{ display: isAnimVisible ? "block" : "none" }}
           className={styles.MainBlock__adaptive__line}
           src="images/MainBlock/AdaptiveLine.png"
         />
