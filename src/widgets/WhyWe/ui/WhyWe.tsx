@@ -38,15 +38,24 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
         )}
       </h2>
 
-      <Button
-        className={isBlockVisible ? styles.WhyWe__button__disappear : ""}
-        onClick={() => setIsBlockVisible(true)}
-        themes={
-          isBlockVisible ? ["big-x-padding"] : ["withBG", "big-x-padding"]
-        }
+      <Flex
+        className={`${styles.WhyWe__why} ${isBlockVisible && styles.WhyWe__why__disappear}`}
+        gap="20"
+        direction="column"
       >
-        Почему?
-      </Button>
+        <Button
+          onClick={() => setIsBlockVisible(true)}
+          themes={
+            isBlockVisible ? ["big-x-padding"] : ["withBG", "big-x-padding"]
+          }
+        >
+          Почему?
+        </Button>
+
+        <p className={styles.WhyWe__why__text}>
+          *нажимай для получения информации
+        </p>
+      </Flex>
 
       {isBlockVisible && (
         <Flex
