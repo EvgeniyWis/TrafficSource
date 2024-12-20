@@ -1,8 +1,16 @@
+@use "@/app/styles/ScssVars" as *;
+
 .TimeToAct {
   padding: 18px 19px;
   border-radius: 30px;
   height: 314px;
   background: #dfcce2;
+
+  @media (max-width: $mobile-mediaquery-width) {
+    height: 162px;
+    border-radius: 13px;
+    padding: 8px;
+  }
 
   &__caption {
     font-weight: 700;
@@ -12,6 +20,10 @@
     background: linear-gradient(65deg, #fe4f74 0%, #a972ff 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 16px;
+    }
   }
 
   &__desc {
@@ -19,9 +31,19 @@
     font-size: 14px;
     line-height: 120%;
     color: #000;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 8px;
+    }
   }
 
   &__button {
     height: 53px;
+    font-size: 14px;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      height: 27px;
+      font-size: 9px;
+    }
   }
 }

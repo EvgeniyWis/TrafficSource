@@ -4,11 +4,6 @@ import { Header } from "./Header";
 const meta = {
   title: "Widgets/Header",
   component: Header,
-  parameters: {
-    backgrounds: {
-      default: "dark",
-    },
-  },
 } satisfies Meta<typeof Header>;
 
 export default meta;

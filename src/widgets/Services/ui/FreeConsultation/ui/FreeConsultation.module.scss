@@ -1,9 +1,17 @@
+@use "@/app/styles/ScssVars" as *;
+
 .FreeConsultation {
-  grid-column: 2/4;
+  grid-column: span 2;
   padding: 27px 28px;
   background: #dfcce2;
   border-radius: 30px;
   height: 314px;
+
+  @media (max-width: $mobile-mediaquery-width) {
+    height: 140px;
+    border-radius: 13px;
+    padding: 11px;
+  }
 
   &__caption {
     font-weight: 700;
@@ -13,6 +21,10 @@
     background: linear-gradient(65deg, #fe4f74 0%, #a972ff 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 16px;
+    }
   }
 
   &__desc {
@@ -21,10 +33,26 @@
     line-height: 120%;
     letter-spacing: -0.02em;
     color: #000;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 8px;
+    }
   }
 
   &__button {
     height: 75px;
     font-size: 22px;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      font-size: 12px;
+      height: 35px;
+    }
+  }
+
+  &__icon {
+    @media (max-width: $mobile-mediaquery-width) {
+      width: 55px;
+      height: 55px;
+    }
   }
 }

@@ -3,6 +3,7 @@ import styles from "./TimeToAct.module.scss";
 import { memo } from "react";
 import TelegramCircleDarkSVG from "@/shared/assets/icons/global/TelegramCircleDarkSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
+import { mobile_mediaQuery_width } from "@/shared/const/global";
 
 export const TimeToAct: React.FC = memo((): React.JSX.Element => {
   return (
@@ -12,7 +13,10 @@ export const TimeToAct: React.FC = memo((): React.JSX.Element => {
       direction="column"
       className={styles.TimeToAct}
     >
-      <Flex direction="column" gap="15">
+      <Flex
+        direction="column"
+        gap={mobile_mediaQuery_width.matches ? "10" : "15"}
+      >
         <Flex width="100" justify="between" align="start">
           <h5 className={styles.TimeToAct__caption}>Время Действовать</h5>
 
