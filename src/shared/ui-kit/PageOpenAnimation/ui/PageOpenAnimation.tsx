@@ -33,7 +33,7 @@ export const PageOpenAnimation: React.FC = memo((): React.JSX.Element => {
       <>
         {isShowComp && (
           <div
-            className={`${styles.PageOpenAnimation} ${isShowAnim && styles.PageOpenAnimation__show}`}
+            className={`${styles.PageOpenAnimation} ${isShowAnim ? styles.PageOpenAnimation__show : ""}`}
           >
             <div className={styles.PageOpenAnimation__bar}></div>
             <div className={styles.PageOpenAnimation__bar}></div>

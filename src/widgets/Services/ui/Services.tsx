@@ -24,7 +24,7 @@ export const Services: React.FC = memo((): React.JSX.Element => {
               onClick={() => setNavSection(section)}
               key={section}
               className={`${styles.Services__nav__item} 
-          ${navSection == section && styles.Services__nav__item__active}`}
+          ${navSection == section ? styles.Services__nav__item__active : ""}`}
             >
               {section}
             </span>

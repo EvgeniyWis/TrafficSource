@@ -298,5 +298,12 @@
   &__anchor {
     position: absolute;
     top: 1000px;
+    width: 1px;
+    height: 1000px;
+    opacity: 0;
+
+    @media (max-width: $mobile-mediaquery-width) {
+      top: 350px;
+    }
   }
 }

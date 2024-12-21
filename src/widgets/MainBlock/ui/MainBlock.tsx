@@ -106,7 +106,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
                 display: isAnimVisible ? "block" : "none",
               }}
               className={`${styles.MainBlock__bgCircles} 
-            ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
+            ${scrollPosition == "MainBlock" ? styles.MainBlock__bgCircles__visible : ""}`}
               scene={
                 mobile_mediaQuery_width.matches
                   ? "https://prod.spline.design/0mpoLPfOhbSOEkoi/scene.splinecode"
@@ -211,7 +211,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
             scene="splines/LeftLineAnim.splinecode"
           />
         </Suspense>
@@ -222,7 +222,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
             scene="splines/RightLineAnim.splinecode"
           />
         </Suspense>

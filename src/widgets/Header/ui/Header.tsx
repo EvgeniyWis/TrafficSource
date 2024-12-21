@@ -94,7 +94,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
         <Flex justify="end" relative>
           <Flex
             className={`${styles.Header__burger}
-            ${burgerMenuIsOpened && styles.Header__burger__active}`}
+            ${burgerMenuIsOpened ? styles.Header__burger__active : ""}`}
             onClick={() => setBurgerMenuIsOpened(!burgerMenuIsOpened)}
           >
             <AdaptiveBurgerIconSVG />
@@ -102,7 +102,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
 
           <Flex
             className={`${styles.Header__burger__itemsWrapper} 
-          ${burgerMenuIsOpened && styles.Header__burger__itemsWrapper__active}`}
+          ${burgerMenuIsOpened ? styles.Header__burger__itemsWrapper__active : ""}`}
           >
             <Flex
               className={styles.Header__burger__items}

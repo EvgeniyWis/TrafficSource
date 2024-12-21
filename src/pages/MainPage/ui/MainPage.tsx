@@ -28,8 +28,8 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
 
     const changeScrollPositions = () => {
       changeScrollPosition(MainBlock, "MainBlock");
-      changeScrollPosition(WhyWeAnchor, "WhyWeAnchor");
       changeScrollPosition(WhyWe, "WhyWe");
+      changeScrollPosition(WhyWeAnchor, "WhyWeAnchor");
       changeScrollPosition(Services, "Services");
       changeScrollPosition(Footer, "Footer");
     };

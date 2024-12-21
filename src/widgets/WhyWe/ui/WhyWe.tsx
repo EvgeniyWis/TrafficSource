@@ -40,7 +40,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
       </h2>
 
       <Flex
-        className={`${styles.WhyWe__why} ${isBlockVisible && styles.WhyWe__why__disappear}`}
+        className={`${styles.WhyWe__why} ${isBlockVisible ? styles.WhyWe__why__disappear : ""}`}
         gap="20"
         direction="column"
       >
