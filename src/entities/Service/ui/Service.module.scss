@@ -2,7 +2,8 @@
 
 $border-radius: 30px;
 $service-height: 314px;
-$service-adaptive-height: 162px;
+$service-mobile-height: 162px;
+$service-mobile-smaller-height: 200px;
 $adaptive-border-radius: 13px;
 
 .Service {
@@ -10,7 +11,11 @@ $adaptive-border-radius: 13px;
   cursor: pointer;
 
   @media (max-width: $mobile-mediaquery-width) {
-    height: $service-adaptive-height;
+    height: $service-mobile-height;
+  }
+
+  @media (max-width: $mobile-smaller-mediaquery-width) {
+    height: $service-mobile-smaller-height;
   }
 
   svg:not(.Service__adaptive__hoverIcon) {
@@ -58,9 +63,12 @@ $adaptive-border-radius: 13px;
     transition: var(--transition-duration-default) linear;
     transition-property: bottom, padding-bottom, border-bottom, border-image;
 
+    @media (max-width: $tablet-smaller-mediaquery-width) {
+      width: 90%;
+    }
+
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 12px;
-      width: 90%;
     }
   }
 
@@ -75,8 +83,12 @@ $adaptive-border-radius: 13px;
     width: 100%;
 
     @media (max-width: $mobile-mediaquery-width) {
-      height: $service-adaptive-height;
+      height: $service-mobile-height;
       border-radius: $adaptive-border-radius;
+    }
+
+    @media (max-width: $mobile-smaller-mediaquery-width) {
+      height: $service-mobile-smaller-height;
     }
   }
 
@@ -97,7 +109,7 @@ $adaptive-border-radius: 13px;
   &__desc {
     font-weight: 500;
     font-size: 14px;
-    line-height: 120%;
+    line-height: 150%;
     color: rgba(255 255 255 / 60%);
     opacity: 0;
     position: relative;

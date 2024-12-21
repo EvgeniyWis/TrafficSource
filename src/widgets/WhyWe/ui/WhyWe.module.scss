@@ -20,6 +20,10 @@
     padding: var(--padding-y) var(--padding-mobile-x);
   }
 
+  @media (max-width: $mobile-smaller-mediaquery-width) {
+    height: 1350px;
+  }
+
   &__caption {
     font-weight: 700;
     font-size: 64px;

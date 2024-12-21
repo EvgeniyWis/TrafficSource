@@ -13,6 +13,7 @@ import TelegramSVG from "@/shared/assets/icons/global/TelegramSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import EmailSVG from "@/shared/assets/icons/global/EmailSVG.svg?react";
 import {
+  mobile_smaller_mediaQuery_width,
   tablet_mediaQuery_width,
   tablet_smaller_mediaQuery_width,
 } from "@/shared/const/global";
@@ -25,7 +26,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
   const isSpinnedLineVisible = useRef<boolean>(false);
 
-  if (scrollPosition == "WhyWeAnchor" && !isSpinnedLineVisible.current) {
+  if (scrollPosition == "WhyWe" && !isSpinnedLineVisible.current) {
     isSpinnedLineVisible.current = true;
   }
 
@@ -188,7 +189,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
 
                 <Flex
                   direction={
-                    !tablet_smaller_mediaQuery_width.matches ? "row" : "column"
+                    !tablet_mediaQuery_width.matches ? "row" : "column"
                   }
                   width="100"
                   gap="10"
@@ -255,7 +256,10 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                 justify={
                   !tablet_smaller_mediaQuery_width.matches ? "end" : "between"
                 }
-                gap="5"
+                direction={
+                  mobile_smaller_mediaQuery_width.matches ? "column" : "row"
+                }
+                gap={mobile_smaller_mediaQuery_width.matches ? "20" : "5"}
                 width="100"
               >
                 <img src="images/WhyWe/WhatsAppQR.webp" alt="+79213299965" />

@@ -3,6 +3,7 @@ import { createContext } from "react";
 export type MainPageScrollPositions =
   | "MainBlock"
   | "WhyWeAnchor"
+  | "WhyWe"
   | "Services"
   | "Footer";
 

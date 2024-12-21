@@ -77,8 +77,8 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
 
   // Оптимизация анимаций/скрытие вне видимости юзера
   const BlocksWithAnims = mobile_mediaQuery_width.matches
-    ? ["MainBlock"]
-    : ["MainBlock", "WhyWeAnchor"];
+    ? ["MainBlock", "WhyWe"]
+    : ["MainBlock", "WhyWe", "WhyWeAnchor"];
   const isAnimVisible = BlocksWithAnims.includes(scrollPosition);
 
   return (
@@ -102,7 +102,9 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
             }
           >
             <Spline
-              style={{ display: isAnimVisible ? "block" : "none" }}
+              style={{
+                display: isAnimVisible ? "block" : "none",
+              }}
               className={`${styles.MainBlock__bgCircles} 
             ${scrollPosition == "MainBlock" && styles.MainBlock__bgCircles__visible}`}
               scene={
@@ -177,6 +179,8 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           wrap
           justify="end"
           width="100"
+          align={mobile_mediaQuery_width.matches ? "end" : "center"}
+          direction={mobile_mediaQuery_width.matches ? "column" : "row"}
           gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
         >
           <Flex
@@ -207,7 +211,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWeAnchor" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/LeftLineAnim.splinecode"
           />
         </Suspense>
@@ -218,7 +222,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWeAnchor" && styles.MainBlock__footer__bg__visible}`}
+        ${scrollPosition == "WhyWe" && styles.MainBlock__footer__bg__visible}`}
             scene="splines/RightLineAnim.splinecode"
           />
         </Suspense>
