@@ -12,6 +12,10 @@
     padding: 8px;
   }
 
+  @media (max-width: $mobile-smaller-mediaquery-width) {
+    height: 200px;
+  }
+
   &__caption {
     font-weight: 700;
     font-size: 36px;
