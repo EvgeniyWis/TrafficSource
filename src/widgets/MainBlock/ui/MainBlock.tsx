@@ -75,8 +75,6 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
   // Сфера нормальной прозрачности только, если юзер находится в главном блоке
   const { scrollPosition } = useContext(MainPageContext);
 
-  console.log(scrollPosition);
-
   // Оптимизация анимаций/скрытие вне видимости юзера
   const BlocksWithAnims = mobile_mediaQuery_width.matches
     ? ["MainBlock", "WhyWe"]
