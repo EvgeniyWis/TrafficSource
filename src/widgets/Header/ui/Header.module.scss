@@ -124,7 +124,12 @@ $border-radius: 11px;
 
       &__bg {
         border-radius: $border-radius;
-        background: linear-gradient(to top, #000, #636262, #fff);
+        background: linear-gradient(
+          to top,
+          var(--color-black),
+          #636262,
+          var(--color-white)
+        );
         position: absolute;
         z-index: var(--z-index-zero);
         inset: 0;

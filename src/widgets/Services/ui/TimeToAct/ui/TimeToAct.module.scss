@@ -34,7 +34,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 120%;
-    color: #000;
+    color: var(--color-black);
 
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 8px;

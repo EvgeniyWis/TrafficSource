@@ -23,7 +23,7 @@
   &__caption {
     font-weight: 700;
     font-size: 26px;
-    color: #fff;
+    color: var(--color-white);
 
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 9px;
@@ -33,7 +33,7 @@
   &__subcaption {
     font-weight: 600;
     font-size: 22px;
-    color: #fff;
+    color: var(--color-white);
 
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 12px;
@@ -43,7 +43,7 @@
   &__link {
     font-weight: 500;
     font-size: 14px;
-    color: #fff;
+    color: var(--color-white);
     opacity: 0.4;
     transition: var(--transition-duration-default) linear opacity;
     cursor: pointer;
@@ -80,7 +80,7 @@
     font-weight: 600;
     font-size: 14px;
     text-align: right;
-    color: #fff;
+    color: var(--color-white);
 
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 8px;
@@ -93,7 +93,7 @@
     font-size: 14px;
     line-height: 150%;
     text-align: right;
-    color: #fff;
+    color: var(--color-white);
     opacity: 0.6;
 
     @media (max-width: $mobile-mediaquery-width) {

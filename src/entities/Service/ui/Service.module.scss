@@ -54,7 +54,7 @@ $adaptive-border-radius: 13px;
     font-weight: 700;
     font-size: 22px;
     line-height: 120%;
-    color: #fff;
+    color: var(--color-white);
     width: 95%;
     text-align: left;
     position: absolute;
@@ -75,7 +75,12 @@ $adaptive-border-radius: 13px;
   &__bg {
     border-radius: $border-radius;
     height: $service-height;
-    background: linear-gradient(to top, #000, #636262, #fff);
+    background: linear-gradient(
+      to top,
+      var(--color-black),
+      #636262,
+      var(--color-white)
+    );
     position: absolute;
     z-index: var(--z-index-zero);
     inset: 0;

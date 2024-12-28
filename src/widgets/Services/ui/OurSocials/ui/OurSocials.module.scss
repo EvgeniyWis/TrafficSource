@@ -36,7 +36,7 @@
     line-height: 110%;
     letter-spacing: -0.02em;
     text-align: center;
-    color: #000;
+    color: var(--color-black);
 
     @media (max-width: $mobile-mediaquery-width) {
       font-size: 8px;

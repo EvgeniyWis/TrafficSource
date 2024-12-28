@@ -65,7 +65,7 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 100%;
-      color: #fff;
+      color: var(--color-white);
       opacity: 0.6;
 
       @media (max-width: $mobile-mediaquery-width) {
