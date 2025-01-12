@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TimeToAct } from "./TimeToAct";
+import { OurSocials } from "./OurSocials";
 
 const meta = {
-  title: "Widgets/Services/TimeToAct",
-  component: TimeToAct,
+  title: "Pages/MainPage/Services/OurSocials",
+  component: OurSocials,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof TimeToAct>;
+} satisfies Meta<typeof OurSocials>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -61,7 +61,7 @@ import WebSiteDevelopActiveSVG from "@/shared/assets/icons/Services/WebSiteDevel
 import { NavSections } from "./types";
 
 // Список услуг
-export const services_items: ServiceProps[] = [
+export const servicesItems: ServiceProps[] = [
   {
     icon: <CreativeSVG />,
     activeIcon: <CreativeActiveSVG />,
@@ -295,7 +295,7 @@ export const services_items: ServiceProps[] = [
 ];
 
 // Список разделов в навигации мобильной версии
-export const nav_sections: NavSections[] = [
+export const navSections: NavSections[] = [
   "Основные",
   "Второй раздел",
   "Третий раздел",

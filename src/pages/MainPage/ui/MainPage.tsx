@@ -1,9 +1,9 @@
-import { MainBlock } from "@/widgets/MainBlock";
 import { memo, useEffect, useState } from "react";
 import { MainPageContext, MainPageScrollPositions } from "../model/context";
-import { WhyWe } from "@/widgets/WhyWe";
 import { IsElementVisible } from "@/shared/utils/IsElementVisible";
-import { Services } from "@/widgets/Services";
+import { WhyWe } from "./WhyWe/ui/WhyWe";
+import { MainBlock } from "./MainBlock/ui/MainBlock";
+import { Services } from "./Services/ui/Services";
 
 export const MainPage: React.FC = memo((): React.JSX.Element => {
   // Отслеживание позиции скролла пользователя
@@ -58,3 +58,5 @@ export const MainPage: React.FC = memo((): React.JSX.Element => {
     </MainPageContext.Provider>
   );
 });
+
+MainPage.displayName = "MainPage";

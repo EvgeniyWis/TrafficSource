@@ -5,3 +5,5 @@ import LogoSVG from "@/shared/assets/icons/global/LogoSVG.svg?react";
 export const Logo: React.FC = memo((): React.JSX.Element => {
   return <LogoSVG className={styles.Logo} />;
 });
+
+Logo.displayName = "Logo";

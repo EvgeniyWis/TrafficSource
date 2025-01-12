@@ -2,7 +2,7 @@ import styles from "./Service.module.scss";
 import { memo } from "react";
 import { ServiceProps } from "../model/types";
 import { Flex } from "@/shared/lib/Stack";
-import { tablet_smaller_mediaQuery_width } from "@/shared/const/global";
+import { tabletSmallerMediaQueryWidth } from "@/shared/const/global";
 import AdaptiveHoverServiceIconFirstPartSVG from "@/shared/assets/icons/Services/AdaptiveHoverServiceIconFirstPartSVG.svg?react";
 import AdaptiveHoverServiceIconSecondPartSVG from "@/shared/assets/icons/Services/AdaptiveHoverServiceIconSecondPartSVG.svg?react";
 
@@ -12,19 +12,19 @@ export const Service: React.FC<ServiceProps> = memo(
       <Flex align="start" relative width="100" className={styles.Service}>
         <Flex
           className={styles.Service__info}
-          justify={tablet_smaller_mediaQuery_width.matches ? "between" : "end"}
+          justify={tabletSmallerMediaQueryWidth.matches ? "between" : "end"}
           direction="column"
           align="start"
           maxHeight
         >
-          {!tablet_smaller_mediaQuery_width.matches && (
+          {!tabletSmallerMediaQueryWidth.matches && (
             <>
               {icon}
               {activeIcon}
             </>
           )}
 
-          {tablet_smaller_mediaQuery_width.matches && (
+          {tabletSmallerMediaQueryWidth.matches && (
             <Flex width="100" justify="between">
               <Flex>
                 {icon}
@@ -55,3 +55,5 @@ export const Service: React.FC<ServiceProps> = memo(
     );
   },
 );
+
+Service.displayName = "Service";

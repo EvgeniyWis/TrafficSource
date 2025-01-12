@@ -6,8 +6,8 @@ import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import EmailSVG from "@/shared/assets/icons/global/EmailSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
 import {
-  mobile_mediaQuery_width,
-  tablet_smaller_mediaQuery_width,
+  mobileMediaQueryWidth,
+  tabletSmallerMediaQueryWidth,
 } from "@/shared/const/global";
 
 export const OurSocials: React.FC = memo((): React.JSX.Element => {
@@ -19,9 +19,9 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
       className={styles.OurSocials}
     >
       <Flex
-        width={tablet_smaller_mediaQuery_width.matches ? "100" : "90"}
+        width={tabletSmallerMediaQueryWidth.matches ? "100" : "90"}
         direction="column"
-        gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+        gap={tabletSmallerMediaQueryWidth.matches ? "5" : "10"}
       >
         <h5 className={styles.OurSocials__caption}>Наши соц.cети</h5>
 
@@ -39,8 +39,9 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
             className={styles.WhyWe__block__marketing__button}
             href="https://t.me/Agent_Traffic23"
             target="_blank"
+            rel="noreferrer"
           >
-            <Flex gap={mobile_mediaQuery_width.matches ? "5" : "10"}>
+            <Flex gap={mobileMediaQueryWidth.matches ? "5" : "10"}>
               <TelegramSVG />
               Telegram
             </Flex>
@@ -55,8 +56,9 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
             className={styles.WhyWe__block__marketing__button}
             href="tel:+79213299965"
             target="_blank"
+            rel="noreferrer"
           >
-            <Flex gap={mobile_mediaQuery_width.matches ? "5" : "10"}>
+            <Flex gap={mobileMediaQueryWidth.matches ? "5" : "10"}>
               <WhatsAppSVG />
               WhatsApp
             </Flex>
@@ -71,8 +73,9 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
             className={styles.WhyWe__block__marketing__button}
             href="mailto: traffic_krd23@mail.ru"
             target="_blank"
+            rel="noreferrer"
           >
-            <Flex gap={mobile_mediaQuery_width.matches ? "5" : "10"}>
+            <Flex gap={mobileMediaQueryWidth.matches ? "5" : "10"}>
               <EmailSVG />
               E-mail
             </Flex>
@@ -82,3 +85,5 @@ export const OurSocials: React.FC = memo((): React.JSX.Element => {
     </Flex>
   );
 });
+
+OurSocials.displayName = "OurSocials";

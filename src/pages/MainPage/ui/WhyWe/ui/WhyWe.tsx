@@ -13,9 +13,9 @@ import TelegramSVG from "@/shared/assets/icons/global/TelegramSVG.svg?react";
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import EmailSVG from "@/shared/assets/icons/global/EmailSVG.svg?react";
 import {
-  mobile_smaller_mediaQuery_width,
-  tablet_mediaQuery_width,
-  tablet_smaller_mediaQuery_width,
+  mobileSmallerMediaQueryWidth,
+  tabletMediaQueryWidth,
+  tabletSmallerMediaQueryWidth,
 } from "@/shared/const/global";
 
 export const WhyWe: React.FC = memo((): React.JSX.Element => {
@@ -26,7 +26,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
   const isSpinnedLineVisible = useRef<boolean>(false);
 
-  if (scrollPosition == "WhyWe" && !isSpinnedLineVisible.current) {
+  if (scrollPosition === "WhyWe" && !isSpinnedLineVisible.current) {
     isSpinnedLineVisible.current = true;
   }
 
@@ -64,12 +64,12 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           width="100"
           align="start"
           justify="between"
-          gap={tablet_smaller_mediaQuery_width.matches ? "30" : "50"}
-          direction={tablet_smaller_mediaQuery_width.matches ? "column" : "row"}
+          gap={tabletSmallerMediaQueryWidth.matches ? "30" : "50"}
+          direction={tabletSmallerMediaQueryWidth.matches ? "column" : "row"}
         >
           <Flex
             align="start"
-            width={tablet_smaller_mediaQuery_width.matches ? "100" : "25"}
+            width={tabletSmallerMediaQueryWidth.matches ? "100" : "25"}
             gap="15"
             direction="column"
           >
@@ -84,7 +84,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
               </h5>
 
               <p className={styles.WhyWe__block__desc}>
-                Наше маркетинговое агентство <strong>с 2-летним опытом </strong>
+                Наше маркетинговое агентство <strong>с 2-летним опытом </strong>
                 предлагает проверенные методы и инновационные подходы. Мы готовы
                 работать над вашим проектом, чтобы добиться максимальных
                 результатов.
@@ -115,18 +115,16 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
           <Flex
             className={styles.WhyWe__block__marketing}
             justify="between"
-            align={tablet_smaller_mediaQuery_width.matches ? "center" : "start"}
-            width={tablet_smaller_mediaQuery_width.matches ? "100" : "75"}
+            align={tabletSmallerMediaQueryWidth.matches ? "center" : "start"}
+            width={tabletSmallerMediaQueryWidth.matches ? "100" : "75"}
             gap="10"
-            direction={
-              tablet_smaller_mediaQuery_width.matches ? "column" : "row"
-            }
+            direction={tabletSmallerMediaQueryWidth.matches ? "column" : "row"}
           >
             <Flex
               width={
-                tablet_smaller_mediaQuery_width.matches
+                tabletSmallerMediaQueryWidth.matches
                   ? "100"
-                  : tablet_mediaQuery_width.matches
+                  : tabletMediaQueryWidth.matches
                     ? "50"
                     : "65"
               }
@@ -139,10 +137,8 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                 <Flex
                   direction="column"
                   justify="between"
-                  gap={tablet_smaller_mediaQuery_width.matches ? "10" : "20"}
-                  width={
-                    !tablet_smaller_mediaQuery_width.matches ? "100" : "80"
-                  }
+                  gap={tabletSmallerMediaQueryWidth.matches ? "10" : "20"}
+                  width={!tabletSmallerMediaQueryWidth.matches ? "100" : "80"}
                   align="start"
                 >
                   <h2 className={styles.WhyWe__block__marketing__caption}>
@@ -156,7 +152,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                   </p>
                 </Flex>
 
-                {tablet_smaller_mediaQuery_width.matches && (
+                {tabletSmallerMediaQueryWidth.matches && (
                   <Flex direction="column">
                     <Flex
                       className={styles.WhyWe__block__marketing__scan}
@@ -179,6 +175,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                     className={styles.WhyWe__block__marketing__button}
                     href="https://t.me/Agent_Traffic23"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <Flex gap="10">
                       <TelegramSVG />
@@ -188,9 +185,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                 </Button>
 
                 <Flex
-                  direction={
-                    !tablet_mediaQuery_width.matches ? "row" : "column"
-                  }
+                  direction={!tabletMediaQueryWidth.matches ? "row" : "column"}
                   width="100"
                   gap="10"
                 >
@@ -199,6 +194,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                       className={styles.WhyWe__block__marketing__button}
                       href="tel:+79213299965"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <Flex gap="10">
                         <WhatsAppSVG />
@@ -212,6 +208,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
                       className={styles.WhyWe__block__marketing__button}
                       href="mailto: traffic_krd23@mail.ru"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <Flex gap="10">
                         <EmailSVG />
@@ -225,9 +222,9 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
 
             <Flex
               width={
-                tablet_smaller_mediaQuery_width.matches
+                tabletSmallerMediaQueryWidth.matches
                   ? "100"
-                  : tablet_mediaQuery_width.matches
+                  : tabletMediaQueryWidth.matches
                     ? "50"
                     : "35"
               }
@@ -235,7 +232,7 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
               align="end"
               direction="column"
             >
-              {!tablet_smaller_mediaQuery_width.matches && (
+              {!tabletSmallerMediaQueryWidth.matches && (
                 <Flex direction="column">
                   <Flex
                     className={styles.WhyWe__block__marketing__scan}
@@ -254,12 +251,12 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
               <Flex
                 className={styles.WhyWe__block__marketing__scan__qrs}
                 justify={
-                  !tablet_smaller_mediaQuery_width.matches ? "end" : "between"
+                  !tabletSmallerMediaQueryWidth.matches ? "end" : "between"
                 }
                 direction={
-                  mobile_smaller_mediaQuery_width.matches ? "column" : "row"
+                  mobileSmallerMediaQueryWidth.matches ? "column" : "row"
                 }
-                gap={mobile_smaller_mediaQuery_width.matches ? "20" : "5"}
+                gap={mobileSmallerMediaQueryWidth.matches ? "20" : "5"}
                 width="100"
               >
                 <img src="images/WhyWe/WhatsAppQR.webp" alt="+79213299965" />
@@ -277,3 +274,5 @@ export const WhyWe: React.FC = memo((): React.JSX.Element => {
     </Flex>
   );
 });
+
+WhyWe.displayName = "WhyWe";

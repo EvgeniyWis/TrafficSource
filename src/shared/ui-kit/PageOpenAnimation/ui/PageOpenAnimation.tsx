@@ -1,6 +1,6 @@
 import {
-  transition_duration_default,
-  transition_duration_medium,
+  transitionDurationDefault,
+  transitionDurationMedium,
 } from "@/shared/const/global";
 import styles from "./PageOpenAnimation.module.scss";
 import { memo, useEffect, useRef, useState } from "react";
@@ -19,8 +19,8 @@ export const PageOpenAnimation: React.FC = memo((): React.JSX.Element => {
 
       ShowCompTimeout.current = setTimeout(() => {
         setIsShowComp(false);
-      }, transition_duration_medium);
-    }, transition_duration_default);
+      }, transitionDurationMedium);
+    }, transitionDurationDefault);
 
     return () => {
       clearTimeout(ShowAnimTimeout.current);
@@ -51,3 +51,5 @@ export const PageOpenAnimation: React.FC = memo((): React.JSX.Element => {
     ),
   });
 });
+
+PageOpenAnimation.displayName = "PageOpenAnimation";

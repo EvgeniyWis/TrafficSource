@@ -2,11 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Services } from "./Services";
 
 const meta = {
-  title: "Widgets/Services",
+  title: "Pages/MainPage/Services",
   component: Services,
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Services>;
 
 export default meta;

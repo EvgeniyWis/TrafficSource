@@ -3,8 +3,8 @@ import styles from "./MainBlock.module.scss";
 import { lazy, memo, Suspense, useContext, useEffect } from "react";
 import { MainPageContext } from "@/pages/MainPage";
 import {
-  mobile_mediaQuery_width,
-  tablet_smaller_mediaQuery_width,
+  mobileMediaQueryWidth,
+  tabletSmallerMediaQueryWidth,
 } from "@/shared/const/global";
 import { randomIntFromInterval } from "@/shared/utils/randomIntFromInterval";
 
@@ -32,10 +32,10 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
 
   useEffect(() => {
     const categories = document.querySelectorAll(".MainBlock__bg__category");
-    let intervals: NodeJS.Timeout[] = [];
+    const intervals: NodeJS.Timeout[] = [];
 
     for (const category of categories) {
-      if (!tablet_smaller_mediaQuery_width.matches) {
+      if (!tabletSmallerMediaQueryWidth.matches) {
         document.addEventListener("mousemove", (event) =>
           categoryHover(event, category),
         );
@@ -76,7 +76,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
   const { scrollPosition } = useContext(MainPageContext);
 
   // Оптимизация анимаций/скрытие вне видимости юзера
-  const BlocksWithAnims = mobile_mediaQuery_width.matches
+  const BlocksWithAnims = mobileMediaQueryWidth.matches
     ? ["MainBlock", "WhyWe"]
     : ["MainBlock", "WhyWe", "WhyWeAnchor"];
   const isAnimVisible = BlocksWithAnims.includes(scrollPosition);
@@ -106,9 +106,9 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
                 display: isAnimVisible ? "block" : "none",
               }}
               className={`${styles.MainBlock__bgCircles} 
-            ${scrollPosition == "MainBlock" ? styles.MainBlock__bgCircles__visible : ""}`}
+            ${scrollPosition === "MainBlock" ? styles.MainBlock__bgCircles__visible : ""}`}
               scene={
-                mobile_mediaQuery_width.matches
+                mobileMediaQueryWidth.matches
                   ? "https://prod.spline.design/0mpoLPfOhbSOEkoi/scene.splinecode"
                   : "splines/CirclesAnim.splinecode"
               }
@@ -161,7 +161,7 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         <Flex
           align="start"
           gap="10"
-          width={tablet_smaller_mediaQuery_width.matches ? "90" : "30"}
+          width={tabletSmallerMediaQueryWidth.matches ? "90" : "30"}
           className={styles.MainBlock__footer__caption}
           direction="column"
         >
@@ -179,26 +179,26 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
           wrap
           justify="end"
           width="100"
-          align={mobile_mediaQuery_width.matches ? "end" : "center"}
-          direction={mobile_mediaQuery_width.matches ? "column" : "row"}
-          gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+          align={mobileMediaQueryWidth.matches ? "end" : "center"}
+          direction={mobileMediaQueryWidth.matches ? "column" : "row"}
+          gap={tabletSmallerMediaQueryWidth.matches ? "5" : "10"}
         >
           <Flex
-            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            gap={tabletSmallerMediaQueryWidth.matches ? "5" : "10"}
             className={styles.MainBlock__footer__step}
           >
             Привлечение
           </Flex>
 
           <Flex
-            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            gap={tabletSmallerMediaQueryWidth.matches ? "5" : "10"}
             className={styles.MainBlock__footer__step}
           >
             Вовлечение
           </Flex>
 
           <Flex
-            gap={tablet_smaller_mediaQuery_width.matches ? "5" : "10"}
+            gap={tabletSmallerMediaQueryWidth.matches ? "5" : "10"}
             className={styles.MainBlock__footer__step}
           >
             Закрытие
@@ -206,29 +206,29 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
         </Flex>
       </Flex>
 
-      {!mobile_mediaQuery_width.matches && (
+      {!mobileMediaQueryWidth.matches && (
         <Suspense>
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
+        ${scrollPosition === "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
             scene="splines/LeftLineAnim.splinecode"
           />
         </Suspense>
       )}
 
-      {!mobile_mediaQuery_width.matches && (
+      {!mobileMediaQueryWidth.matches && (
         <Suspense>
           <Spline
             style={{ display: isAnimVisible ? "block" : "none" }}
             className={`${styles.MainBlock__footer__bg} 
-        ${scrollPosition == "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
+        ${scrollPosition === "WhyWe" ? styles.MainBlock__footer__bg__visible : ""}`}
             scene="splines/RightLineAnim.splinecode"
           />
         </Suspense>
       )}
 
-      {mobile_mediaQuery_width.matches && (
+      {mobileMediaQueryWidth.matches && (
         <img
           loading="lazy"
           className={styles.MainBlock__adaptive__line}
@@ -238,3 +238,5 @@ export const MainBlock: React.FC = memo((): React.JSX.Element => {
     </Flex>
   );
 });
+
+MainBlock.displayName = "MainBlock";

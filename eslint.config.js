@@ -29,8 +29,8 @@ export default [
       "plugin:react-hooks/recommended",
       "prettier",
       "plugin:storybook/recommended",
-      "plugin:react/recommended"
-    )
+      "plugin:react/recommended",
+    ),
   ),
   {
     plugins: {
@@ -72,11 +72,10 @@ export default [
       ],
 
       "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
       "react-hooks/exhaustive-deps": "warn",
       "react/button-has-type": "error",
-      "react/prop-types": "error",
-      "react/require-default-props": "warn",
+      "react/prop-types": "off",
+      "react/require-default-props": "off",
       camelcase: ["warn", { properties: "always" }],
       "capitalized-comments": ["warn", "always"],
       eqeqeq: ["warn", "smart"],
@@ -89,7 +88,7 @@ export default [
       "react/display-name": "error",
       "react/no-children-prop": "error",
       "react/no-danger-with-children": "error",
-      "react/jsx-no-bind": "error",
+      "react/jsx-no-bind": "warn",
     },
   },
 ];

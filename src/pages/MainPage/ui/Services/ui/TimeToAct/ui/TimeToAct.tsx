@@ -3,7 +3,7 @@ import styles from "./TimeToAct.module.scss";
 import { memo } from "react";
 import TelegramCircleDarkSVG from "@/shared/assets/icons/global/TelegramCircleDarkSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
-import { mobile_mediaQuery_width } from "@/shared/const/global";
+import { mobileMediaQueryWidth } from "@/shared/const/global";
 
 export const TimeToAct: React.FC = memo((): React.JSX.Element => {
   return (
@@ -15,7 +15,7 @@ export const TimeToAct: React.FC = memo((): React.JSX.Element => {
     >
       <Flex
         direction="column"
-        gap={mobile_mediaQuery_width.matches ? "10" : "15"}
+        gap={mobileMediaQueryWidth.matches ? "10" : "15"}
       >
         <Flex width="100" justify="between" align="start">
           <h5 className={styles.TimeToAct__caption}>Время Действовать</h5>
@@ -32,10 +32,12 @@ export const TimeToAct: React.FC = memo((): React.JSX.Element => {
         className={styles.TimeToAct__button}
         themes={["withMoreDarkBG", "maxWidth"]}
       >
-        <a target="_blank" href="https://t.me/Agent_Traffic23">
+        <a target="_blank" href="https://t.me/Agent_Traffic23" rel="noreferrer">
           Бесплатная консультация
         </a>
       </Button>
     </Flex>
   );
 });
+
+TimeToAct.displayName = "TimeToAct";

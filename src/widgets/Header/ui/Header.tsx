@@ -5,7 +5,7 @@ import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import TelegramCircleSVG from "@/shared/assets/icons/global/TelegramCircleSVG.svg?react";
 import { Button } from "@/shared/ui-kit/Button";
 import { Logo } from "@/shared/ui-kit/Logo";
-import { tablet_smaller_mediaQuery_width } from "@/shared/const/global";
+import { tabletSmallerMediaQueryWidth } from "@/shared/const/global";
 import AdaptiveBurgerIconSVG from "@/shared/assets/icons/Header/AdaptiveBurgerIconSVG.svg?react";
 import AdaptiveBurgerMenuSeparatorSVG from "@/shared/assets/icons/Header/AdaptiveBurgerMenuSeparatorSVG.svg?react";
 
@@ -15,7 +15,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
 
   return (
     <header className={styles.Header}>
-      <Flex gap={!tablet_smaller_mediaQuery_width.matches ? "15" : "10"}>
+      <Flex gap={!tabletSmallerMediaQueryWidth.matches ? "15" : "10"}>
         <Logo />
 
         <h2 className={styles.Header__caption}>
@@ -25,7 +25,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
         </h2>
       </Flex>
 
-      {!tablet_smaller_mediaQuery_width.matches && (
+      {!tabletSmallerMediaQueryWidth.matches && (
         <nav>
           <ul className={styles.Header__navList}>
             <li
@@ -64,12 +64,13 @@ export const Header: React.FC = memo((): React.JSX.Element => {
         </nav>
       )}
 
-      {!tablet_smaller_mediaQuery_width.matches && (
+      {!tabletSmallerMediaQueryWidth.matches && (
         <Flex className={styles.Header__contacts} gap="15">
           <a
             className={styles.Header__contact}
             target="_blank"
             href="tel:+79213299965"
+            rel="noreferrer"
           >
             <WhatsAppSVG />
           </a>
@@ -78,19 +79,24 @@ export const Header: React.FC = memo((): React.JSX.Element => {
             className={styles.Header__contact}
             target="_blank"
             href="https://t.me/Agent_Traffic23"
+            rel="noreferrer"
           >
             <TelegramCircleSVG />
           </a>
 
           <Button>
-            <a target="_blank" href="https://t.me/Agent_Traffic23">
+            <a
+              target="_blank"
+              href="https://t.me/Agent_Traffic23"
+              rel="noreferrer"
+            >
               Бесплатная консультация
             </a>
           </Button>
         </Flex>
       )}
 
-      {tablet_smaller_mediaQuery_width.matches && (
+      {tabletSmallerMediaQueryWidth.matches && (
         <Flex justify="end" relative>
           <Flex
             className={`${styles.Header__burger}
@@ -153,6 +159,7 @@ export const Header: React.FC = memo((): React.JSX.Element => {
                   className={styles.Header__contact}
                   target="_blank"
                   href="tel:+79213299965"
+                  rel="noreferrer"
                 >
                   <WhatsAppSVG />
                 </a>
@@ -161,13 +168,18 @@ export const Header: React.FC = memo((): React.JSX.Element => {
                   className={styles.Header__contact}
                   target="_blank"
                   href="https://t.me/Agent_Traffic23"
+                  rel="noreferrer"
                 >
                   <TelegramCircleSVG />
                 </a>
               </Flex>
 
               <Button>
-                <a target="_blank" href="https://t.me/Agent_Traffic23">
+                <a
+                  target="_blank"
+                  href="https://t.me/Agent_Traffic23"
+                  rel="noreferrer"
+                >
                   Бесплатная консультация
                 </a>
               </Button>
@@ -180,3 +192,5 @@ export const Header: React.FC = memo((): React.JSX.Element => {
     </header>
   );
 });
+
+Header.displayName = "Header";

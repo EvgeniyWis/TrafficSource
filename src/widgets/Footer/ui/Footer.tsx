@@ -6,20 +6,20 @@ import FooterLogoAdaptiveSVG from "@/shared/assets/icons/Footer/FooterLogoAdapti
 import WhatsAppSVG from "@/shared/assets/icons/global/WhatsAppSVG.svg?react";
 import TelegramCircleSVG from "@/shared/assets/icons/global/TelegramCircleSVG.svg?react";
 import EmailCircleSVG from "@/shared/assets/icons/global/EmailCircleSVG.svg?react";
-import { mobile_mediaQuery_width } from "@/shared/const/global";
+import { mobileMediaQueryWidth } from "@/shared/const/global";
 
 export const Footer: React.FC = memo((): React.JSX.Element => {
   return (
     <footer id="Footer" className={styles.Footer}>
       <Flex
-        gap={mobile_mediaQuery_width.matches ? "20" : "0"}
+        gap={mobileMediaQueryWidth.matches ? "20" : "0"}
         align="start"
         maxHeight
         justify="between"
         direction="column"
       >
-        <Flex gap={mobile_mediaQuery_width.matches ? "10" : "20"}>
-          {mobile_mediaQuery_width.matches ? (
+        <Flex gap={mobileMediaQueryWidth.matches ? "10" : "20"}>
+          {mobileMediaQueryWidth.matches ? (
             <FooterLogoAdaptiveSVG />
           ) : (
             <FooterLogoSVG />
@@ -33,25 +33,26 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
         </Flex>
 
         <Flex
-          direction={mobile_mediaQuery_width.matches ? "column" : "row"}
-          gap={mobile_mediaQuery_width.matches ? "30" : "50"}
+          direction={mobileMediaQueryWidth.matches ? "column" : "row"}
+          gap={mobileMediaQueryWidth.matches ? "30" : "50"}
         >
           <Flex
             align="start"
-            gap={mobile_mediaQuery_width.matches ? "5" : "15"}
+            gap={mobileMediaQueryWidth.matches ? "5" : "15"}
             direction="column"
           >
             <h6 className={styles.Footer__subcaption}>Контакты</h6>
 
             <Flex
               align="start"
-              gap={mobile_mediaQuery_width.matches ? "0" : "10"}
+              gap={mobileMediaQueryWidth.matches ? "0" : "10"}
               direction="column"
             >
               <a
                 className={styles.Footer__link}
                 href="mailto: traffic_krd23@mail.ru"
                 target="_blank"
+                rel="noreferrer"
               >
                 traffic_krd23@mail.ru
               </a>
@@ -60,6 +61,7 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
                 className={styles.Footer__link}
                 href="tel: +79213299965"
                 target="_blank"
+                rel="noreferrer"
               >
                 +7 921 329 99-65
               </a>
@@ -68,16 +70,17 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
 
           <Flex
             align="start"
-            gap={mobile_mediaQuery_width.matches ? "10" : "15"}
+            gap={mobileMediaQueryWidth.matches ? "10" : "15"}
             direction="column"
           >
             <h6 className={styles.Footer__subcaption}>Социальные сети</h6>
 
-            <Flex gap={mobile_mediaQuery_width.matches ? "15" : "20"}>
+            <Flex gap={mobileMediaQueryWidth.matches ? "15" : "20"}>
               <a
                 className={styles.Footer__contact}
                 target="_blank"
                 href="https://t.me/Agent_Traffic23"
+                rel="noreferrer"
               >
                 <TelegramCircleSVG />
               </a>
@@ -86,6 +89,7 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
                 className={styles.Footer__contact}
                 target="_blank"
                 href="tel:+79213299965"
+                rel="noreferrer"
               >
                 <WhatsAppSVG />
               </a>
@@ -94,6 +98,7 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
                 className={styles.Footer__contact}
                 target="_blank"
                 href="mailto: traffic_krd23@mail.ru"
+                rel="noreferrer"
               >
                 <EmailCircleSVG />
               </a>
@@ -122,3 +127,5 @@ export const Footer: React.FC = memo((): React.JSX.Element => {
     </footer>
   );
 });
+
+Footer.displayName = "Footer";

@@ -1,4 +1,4 @@
-import { NavSections } from "@/widgets/Services";
+import { NavSections } from "@/pages/MainPage";
 
 export interface ServiceProps {
   icon: React.ReactNode;
